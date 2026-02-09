@@ -103,10 +103,32 @@ window.Quarto = {
 
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="quarto-light">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#data" id="toc-data" class="nav-link active" data-scroll-target="#data">Data</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a>
+  <ul class="collapse">
+  <li><a href="#identification" id="toc-identification" class="nav-link" data-scroll-target="#identification">Identification</a></li>
+  <li><a href="#defining-the-treated-and-control-groups" id="toc-defining-the-treated-and-control-groups" class="nav-link" data-scroll-target="#defining-the-treated-and-control-groups">Defining the treated and control groups</a></li>
+  <li><a href="#estimation" id="toc-estimation" class="nav-link" data-scroll-target="#estimation">Estimation</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#cee" id="toc-cee" class="nav-link" data-scroll-target="#cee">CEE</a></li>
+  <li><a href="#price-of-improvements" id="toc-price-of-improvements" class="nav-link" data-scroll-target="#price-of-improvements">Price of improvements</a></li>
+  <li><a href="#out-of-pocket-expenses-traduction-de-reste-à-charge" id="toc-out-of-pocket-expenses-traduction-de-reste-à-charge" class="nav-link" data-scroll-target="#out-of-pocket-expenses-traduction-de-reste-à-charge">Out-of-pocket expenses [traduction de reste à charge ?]</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -200,23 +222,23 @@ window.Quarto = {
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div id="nghylgxfao" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nghylgxfao table {
+<div id="aeoebramas" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#aeoebramas table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nghylgxfao thead, #nghylgxfao tbody, #nghylgxfao tfoot, #nghylgxfao tr, #nghylgxfao td, #nghylgxfao th {
+#aeoebramas thead, #aeoebramas tbody, #aeoebramas tfoot, #aeoebramas tr, #aeoebramas td, #aeoebramas th {
   border-style: none;
 }
 
-#nghylgxfao p {
+#aeoebramas p {
   margin: 0;
   padding: 0;
 }
 
-#nghylgxfao .gt_table {
+#aeoebramas .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -242,12 +264,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#nghylgxfao .gt_caption {
+#aeoebramas .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nghylgxfao .gt_title {
+#aeoebramas .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -259,7 +281,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#nghylgxfao .gt_subtitle {
+#aeoebramas .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -271,7 +293,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#nghylgxfao .gt_heading {
+#aeoebramas .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -283,13 +305,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#nghylgxfao .gt_bottom_border {
+#aeoebramas .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nghylgxfao .gt_col_headings {
+#aeoebramas .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -304,7 +326,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#nghylgxfao .gt_col_heading {
+#aeoebramas .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -324,7 +346,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#nghylgxfao .gt_column_spanner_outer {
+#aeoebramas .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -336,15 +358,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#nghylgxfao .gt_column_spanner_outer:first-child {
+#aeoebramas .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nghylgxfao .gt_column_spanner_outer:last-child {
+#aeoebramas .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nghylgxfao .gt_column_spanner {
+#aeoebramas .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -356,11 +378,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#nghylgxfao .gt_spanner_row {
+#aeoebramas .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nghylgxfao .gt_group_heading {
+#aeoebramas .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -386,7 +408,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#nghylgxfao .gt_empty_group_heading {
+#aeoebramas .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -401,15 +423,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#nghylgxfao .gt_from_md > :first-child {
+#aeoebramas .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nghylgxfao .gt_from_md > :last-child {
+#aeoebramas .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nghylgxfao .gt_row {
+#aeoebramas .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -428,7 +450,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#nghylgxfao .gt_stub {
+#aeoebramas .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -441,7 +463,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#nghylgxfao .gt_stub_row_group {
+#aeoebramas .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -455,15 +477,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#nghylgxfao .gt_row_group_first td {
+#aeoebramas .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nghylgxfao .gt_row_group_first th {
+#aeoebramas .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nghylgxfao .gt_summary_row {
+#aeoebramas .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -473,16 +495,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#nghylgxfao .gt_first_summary_row {
+#aeoebramas .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nghylgxfao .gt_first_summary_row.thick {
+#aeoebramas .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nghylgxfao .gt_last_summary_row {
+#aeoebramas .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -492,7 +514,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#nghylgxfao .gt_grand_summary_row {
+#aeoebramas .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -502,7 +524,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#nghylgxfao .gt_first_grand_summary_row {
+#aeoebramas .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -512,7 +534,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#nghylgxfao .gt_last_grand_summary_row_top {
+#aeoebramas .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -522,11 +544,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#nghylgxfao .gt_striped {
+#aeoebramas .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nghylgxfao .gt_table_body {
+#aeoebramas .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -535,7 +557,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#nghylgxfao .gt_footnotes {
+#aeoebramas .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -549,7 +571,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#nghylgxfao .gt_footnote {
+#aeoebramas .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -558,7 +580,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#nghylgxfao .gt_sourcenotes {
+#aeoebramas .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -572,7 +594,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#nghylgxfao .gt_sourcenote {
+#aeoebramas .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -580,72 +602,72 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#nghylgxfao .gt_left {
+#aeoebramas .gt_left {
   text-align: left;
 }
 
-#nghylgxfao .gt_center {
+#aeoebramas .gt_center {
   text-align: center;
 }
 
-#nghylgxfao .gt_right {
+#aeoebramas .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nghylgxfao .gt_font_normal {
+#aeoebramas .gt_font_normal {
   font-weight: normal;
 }
 
-#nghylgxfao .gt_font_bold {
+#aeoebramas .gt_font_bold {
   font-weight: bold;
 }
 
-#nghylgxfao .gt_font_italic {
+#aeoebramas .gt_font_italic {
   font-style: italic;
 }
 
-#nghylgxfao .gt_super {
+#aeoebramas .gt_super {
   font-size: 65%;
 }
 
-#nghylgxfao .gt_footnote_marks {
+#aeoebramas .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nghylgxfao .gt_asterisk {
+#aeoebramas .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nghylgxfao .gt_indent_1 {
+#aeoebramas .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nghylgxfao .gt_indent_2 {
+#aeoebramas .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nghylgxfao .gt_indent_3 {
+#aeoebramas .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nghylgxfao .gt_indent_4 {
+#aeoebramas .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nghylgxfao .gt_indent_5 {
+#aeoebramas .gt_indent_5 {
   text-indent: 25px;
 }
 
-#nghylgxfao .katex-display {
+#aeoebramas .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#nghylgxfao div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#aeoebramas div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -693,11 +715,11 @@ window.Quarto = {
 </div>
 </div>
 </section>
-</section>
-<section id="estimation" class="level2">
-<h2 class="anchored" data-anchor-id="estimation">Estimation</h2>
+<section id="estimation" class="level3">
+<h3 class="anchored" data-anchor-id="estimation">Estimation</h3>
 <p>We use Callaway and Sant’anna’ (2021)’s doubly robust estimation method, as implemented by the R package <code>did</code>. As mentionned in the previous section, units are defined at the combination of locality and improvement type. The treated group consists of installations of heat pumps ; the treatment is binary, corresponding to whether the MPR subsidies were increased on April 15 2022, and is thus also non-staggered. We control for the median fiscal reference revenue. The estimated model can be reframed in the terms of a classic TWFE regression :</p>
 <p><span class="math display">\[Y_{i,t}=\alpha_i + \lambda_t + \sum_{k = -12; }^{12} \gamma_k*D_{i,t-k} + \beta*X_{i,t}+\varepsilon_{i,t}\]</span> With <span class="math inline">\(Y_{i,t}\)</span> the average at the level of <span class="math inline">\(i,\)</span> the ZE and improvement type combination.</p>
+</section>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
