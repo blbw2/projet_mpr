@@ -5,6 +5,10 @@ format:
     echo: false
     warning: false
     error: false
+    toc: true
+    toc-location: left
+    toc-float: true
+    toc-depth: 3
 
 
 ---
@@ -32,7 +36,7 @@ The dataset provides information on the overall application, as support can be r
 
 - The dataset contains variables relating to the MPR grant application procedure, but relatively little information on the applicant, the house being renovated, or the characteristics of the improvement itself, i.e. potential control variables. We use the fiscal reference revenue of the household as a control variable ; a summary of available variables is included in the annex.
 
-- Some extreme values for prices are present in the dataset, likely attributable to errors in filling out the applications. As a result, prior to aggregation, **we remove from the data all observations with prices above the 999th quantile of the improvement type's distribution**^[Il y a probablement une manière plus sophistiquée de faire ça ?].
+- Some extreme values for prices are present in the dataset, likely attributable to errors in filling out the applications. As a result, prior to aggregation, **we remove from the data all observations with prices above the 999th quantile of the improvement type's distribution**^[B: Il y a probablement une manière plus sophistiquée de faire ça ?].
 
 - We limit the scope of our study to that of Metropolitan France, thus excluding from our sample 20 Employment Zones (out of 305 total).
 
@@ -140,9 +144,9 @@ nsize_gt <- nsize|>
 
 nsize_gt
 ```
-## Estimation
+### Estimation
 
-We use Callaway and Sant'anna' (2021)'s doubly robust estimation method, as implemented by the R package `did`. As mentionned in the previous section, units are defined at the combination of locality and improvement type. The treated group consists of installations of heat pumps ; the treatment is binary, corresponding to whether the MPR subsidies were increased on April 15 2022, and is thus also non-staggered. We control for the median fiscal reference revenue. The estimated model can be reframed in the terms of a classic TWFE regression :
+We use Callaway and Sant'anna' (2021)'s doubly robust estimation method, as implemented by the R package `did`. As mentionned in the previous section, units are defined at the combination of locality and improvement type. The treated group consists of installations of heat pumps ; the treatment is binary, corresponding to whether the MPR subsidies were increased on April 15 2022, and is thus also non-staggered. We control for the median fiscal reference revenue. The estimated model can be rewritten as a classic TWFE regression :
 
 $$Y_{i,t}=\alpha_i + \lambda_t + \sum_{k = -12; }^{12} \gamma_k*D_{i,t-k} + \beta*X_{i,t}+\varepsilon_{i,t}$$
 With $Y_{i,t}$ the average at the level of $i,$ the ZE and improvement type combination.
@@ -290,10 +294,10 @@ knitr::include_graphics("graphs_05_02_2026/graph_did_pcae_tmo_price_wtd_exventil
 
 ```
 
-- The MPR increase may have caused an increase in the price of heat pump installations relative, approximately 700 euros^[A vérifier - ici je prends la moyenne des 5 coefficients estimés en période post-.], although the confidence intervals are rather wide.
+- The MPR increase may have caused an increase in the price of heat pump installations relative, approximately 700 euros^[B: A vérifier - ici je prends la moyenne des 5 coefficients estimés en période post-.], although the confidence intervals are rather wide.
 
 - At this stage caution must be exercised in interpreting this estimate :
-  - As explained in the Data section, the "price" is the bill faced by the household for the equipment as well as its installation. Our dataset does not include explicit measures of the performance of the equipment, so the apparent price increase may instead reflect that the higher subsidy enabled low-income households to invest in better equipment^[Idéalement j'aurai la base CEE fin mars, donc possibilité d'utiliser les KWh cumac des fiches standardisées pour prendre en compte la performance.].
+  - As explained in the Data section, the "price" is the bill faced by the household for the equipment as well as its installation. Our dataset does not include explicit measures of the performance of the equipment, so the apparent price increase may instead reflect that the higher subsidy enabled low-income households to invest in better equipment^[B: Idéalement j'aurai la base CEE fin mars, donc possibilité d'utiliser les KWh cumac des fiches standardisées pour prendre en compte la performance.].
   - The joint test rejects the null hypothesis of no difference in pre-intervention trends. Although the individual point estimates are rather imprecise, **from t = -5 (mid-October 2021) there does appear to be an upwards deviation of the trend in the price of heat pumps relative to that of the control group**.
   - The `HonestDID` analysis shows that the estimated post-intervention coefficients are not robust to the pre-intervention deviations from parallel-trends.
   
