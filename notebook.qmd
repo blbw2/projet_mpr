@@ -210,7 +210,7 @@ We use the `HonestDID` package to assess the sensitivity of the estimated respon
 
 ```{r echo =TRUE, eval= FALSE}
 #| code-fold: true
-#| code-summary: "Code for `HonestDID` analysis of CEE response"
+#| code-summary: "Specification for `HDID` analysis of estimated CEE effects"
 
 
 aggte_ceebimonthly = aggte(
@@ -305,15 +305,17 @@ knitr::include_graphics("graphs_05_02_2026/graph_did_pcae_tmo_price_wtd_exventil
   
 ::: {.callout-note collapse ="true"}
 
-### `HonestDID` analysis : CEE response
+### `HonestDID` analysis : Price response
 
 
 We use the `HonestDID` package to assess the sensitivity of the estimated response of CEE to deviations from parallel pre-trends.
+
   - We examine the estimated response at t=4 (mid-August to mid-September 2022)^[B: à harmoniser : le choix de la période sur laquelle faire l'analyse HDID]. 
+  
 
 ```{r echo =TRUE, eval= FALSE}
 #| code-fold: true
-#| code-summary: "Code for `HonestDID` analysis of price response"
+#| code-summary: "Specification for `HDID` analysis of estimated price effects"
 
 
 
@@ -359,3 +361,42 @@ knitr::include_graphics("graphs_05_02_2026/graph_did_pcae_reste.png")
 
 Here we show the estimated effect of the MPR increase on the part of the renovation expenses which must be financed by the household themselves (i.e. : the price, minus MPR and CEE financing).
   - Overall, the estimates show the same pre-intervention pattern as in the case of the price variable, i.e. a positive difference in pre-trends starting from October 2021.
+  
+  
+# Annex
+
+## `HonestDID`
+
+Start from Rambachan, Roth (2023)'s decomposition of the target parameter vector.
+
+```{r}
+knitr::include_graphics("graphs_05_02_2026/hdid_assumption1.png")
+```
+
+  
+Further, define $\delta_s$ the difference in trends between control and treated groups at horizon $s$ (when the intervention starts, $s=0$).
+  
+Target parameters are partially identified by assuming $\delta$ is in a (user-defined) set of envisaged difference in trends $\Delta$, with the parallel trend assumption nested as $\Delta = \{\delta:\delta_{post}=0\}$.
+
+  - The usual approach to parallel trends : check that $\delta_{pre}=0$ and assume that $\delta_{post}=\delta_{pre}$.
+  
+
+We use 2 of the default ways of specifying $\Delta$ suggested by Rambachan, Roth (2023).
+
+
+**Binding relative magnitudes of $\delta_s$ for consecutive periods** :
+
+$$\Delta^{RM}(\bar M) = \{ \delta : \forall t \geq0, | \delta_{t+1}-\delta_t| \leq \bar M * max_{s <0}|\delta_{s+1}-\delta_s| \}$$
+    - "$\bar M$ bounds the maximum post-treatment violation of parallel trends between ***consecutive*** [our emphasis] periods by  times the maximum pre-treatment violation of parallel trends."
+    - Authors highlight its relevance in cases where one wants to test whether post-period estimates might be caused by confounding *shocks*, of magnitude comparable to the highest pre-intervention confounding shock^[Par défaut les fonctions implémentées dans R choisissent la valeur de $|\delta_s|$ la plus élevée dans la période pre-treatment. Rien n'empêche toutefois de choisir les périodes pre- qu'on juge les plus pertinentes.].  
+    
+    
+**Binding the smoothness of $\delta_s$** :
+
+If the researcher is interested in binding the changes in the differential trends between control and treated groups :
+
+$$\Delta^{SD}(M) := \{\delta: |(\delta_{t+1} - \delta_{t}) - (\delta_t - \delta_{t-1}) \leq M\}$$
+A common practice is controlling for group-specific linear trends, i.e. setting $M=0$.
+
+- One can further impose **sign** and **monotonicity** restrictions, e.g. that the differential trend be increasing and/or be of positive sign.
+
