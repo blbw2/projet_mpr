@@ -180,7 +180,7 @@ did_pcae_tmo_cee<- att_gt(data= mpr_monthly %>%
 - @fig-didCEE shows the estimated effects of the MPR increase on average CEE funding received, which decreased by around 300 euros for the treated improvement type (heat pumps) compared to the controls (water boilers).
 
 - The joint test of significance of the pre-intervention coefficients clearly rejects the null hypothesis of no difference in trends between both groups prior to the MPR increase. Arguably, however, this rejection is driven by a difference in trends which appears to be insignificant starting from 3 periods (6 months from t=0) before the shock.
-  - Peut-être un lien avec la fin de période CEE ? Le coefficient à t = -2 correspond à la période ~15/10-11/2021 [mais pourquoi la fin de période CEE affecterait de manière différenciée les PAC et les chauffe-eau ?]
+  - Peut-être un lien avec la fin de période CEE ? Le coefficient à t = -2 correspond à la période ~15/10-11/2021 [mais pourquoi la fin de période CEE affecterait de manière différenciée les PAC et les chauffe-eau ?].
   - The `HonestDID` analysis shows that assuming the deviation in trends from t=-5 to t=-2 persisted over the entire sample, the estimated CEE response cannot be attributed to the MPR increase^[B: Hypothèse très forte ?]. 
   
   
@@ -300,6 +300,15 @@ knitr::include_graphics("graphs_05_02_2026/graph_did_pcae_tmo_price_wtd_exventil
   - The joint test rejects the null hypothesis of no difference in pre-intervention trends. Although the individual point estimates are rather imprecise, **from t = -5 (mid-October 2021) there does appear to be an upwards deviation of the trend in the price of heat pumps relative to that of the control group**.
   - The `HonestDID` analysis shows that the estimated post-intervention coefficients are not robust to the pre-intervention deviations from parallel-trends.
   
+- A explorer : d'après l'étude de marché des PAC réalisée par Observ'ER et publiée en juillet 2022, sur la fin 2021-début 2022^[Observ'ER (2022), "Étude qualitative du marché
+des pompes à chaleur individuelle", p. 35. Accessible à https://energies-renouvelables.org/wp-content/uploads/2022/09/ObservER-Rapport-Quali-PAC-2022-final-1.pdf .] :
+  
+  - La demande est très forte.
+  - Problème d'approvisionnements : "*Malheureusement les pénuries de composants posent de vrais problèmes à la filière [...]  Nous partons du principe que la guerre ne va pas durer des années, et peut-être que la Chine va arrêter sa politique de zéro Covid catastrophique pour l'économie. Mais pour l'instant c'est très pénalisant*." et "*Nous faisons face à des problèmes d'approvisionnement qui limitent les ventes. S'il y a un tassement du marché, ça
+sera lié à un problème d'offre, pas de demande.*"
+  - Dépendance aux inputs importés d'Asie, bien qu'une production/assemblage industriel importante a lieu en Europe et en France.
+  - Mais à vérifier : l'argument n'est pertinent que si les équipements "contrôle" (chauffe-eau) n'ont pas la même exposition aux chocs sur les chaînes d'approvisionnement post-COVID.
+  
   
   
 ::: {.callout-note collapse ="true"}
@@ -387,8 +396,10 @@ We use 2 of the default ways of specifying $\Delta$ suggested by Rambachan, Roth
 **Binding relative magnitudes of $\delta_s$ for consecutive periods** ("RM") :
 
 $$\Delta^{RM}(\bar M) = \{ \delta : \forall t \geq0, | \delta_{t+1}-\delta_t| \leq \bar M * max_{s <0}|\delta_{s+1}-\delta_s| \}$$
+
     - "$\bar M$ bounds the maximum post-treatment violation of parallel trends between ***consecutive*** [our emphasis] periods by  times the maximum pre-treatment violation of parallel trends."
-    - Authors highlight its relevance in cases where one wants to test whether post-period estimates might be caused by confounding *shocks*, of magnitude comparable to the highest pre-intervention confounding shock^[Par défaut les fonctions implémentées dans R choisissent la valeur de $|\delta_s|$ la plus élevée dans la période pre-treatment. Rien n'empêche en théorie de choisir les périodes pre- qu'on juge les plus pertinentes.].  
+    
+    - Authors highlight its relevance in cases where one wants to test whether post-period estimates might be caused by confounding *shocks*, of magnitude comparable to the highest pre-intervention confounding shock^[B: Par défaut les fonctions implémentées dans R choisissent la valeur de $|\delta_s|$ la plus élevée dans la période pre-treatment. Rien n'empêche en théorie de choisir les périodes pre- qu'on juge les plus pertinentes.].  
     
     
 **Binding the smoothness of $\delta_s$** ("SD") :
@@ -399,4 +410,46 @@ $$\Delta^{SD}(M) := \{\delta: |(\delta_{t+1} - \delta_{t}) - (\delta_t - \delta_
 A common practice is controlling for group-specific linear trends, i.e. setting $M=0$.
 
 - One can further impose **sign** and **monotonicity** restrictions, e.g. that the differential trend be increasing and/or be of positive sign.
+
+## Robustesse : leave-one-out
+
+### Effet CEE :
+
+- En excluant les chauffe-eau thermodynamiques du groupe Contrôle :
+
+```{r}
+#|label: fig-robustCEEexCET
+
+knitr::include_graphics("graphs_05_02_2026/graph_didrobustness_cee_excet.png")
+
+```
+
+- En excluant les chauffe-eau solaires du groupe Contrôle :
+
+```{r}
+#|label: fig-robustCEEexCES
+
+
+knitr::include_graphics("graphs_05_02_2026/graph_didrobustness_cee_exces.png")
+
+```
+
+### Effet "Prix" :
+
+- En excluant les chauffe-eau thermodynamiques du groupe Contrôle :
+
+
+```{r}
+
+knitr::include_graphics("graphs_05_02_2026/graph_didrobustness_price_excet.png")
+```
+
+
+- En excluant les chauffe-eau solaires du groupe Contrôle :
+
+
+```{r}
+knitr::include_graphics("graphs_05_02_2026/graph_didrobustness_price_exces.png")
+
+```
 
