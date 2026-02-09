@@ -90,15 +90,13 @@ The outcome variables are thus the **averages**  of the CEE subsidy, price charg
 
 ### Identification
 
-- For identification, we leverage a 2022 administrative decision to raise the grants for some types of improvements only for identification\footnote{See the Annex for a list of the improvement types and the amounts of the grants increases, if any.}. In the context of the Russian invasion of Ukraine and the resultant concerns over energy prices and supply, the increase in MPR was part of a push by the French government to reduce national dependence on imported fossil fuels. 
+- For identification, we leverage a 2022 administrative decision to raise the grants for some types of improvements only for identification\footnote{See the Annex for a list of the improvement types and the amounts of the grants increases, if any [to be added].}. In the context of the Russian invasion of Ukraine and the resultant concerns over energy prices and supply, the increase in MPR was part of a push by the French government to reduce national dependence on imported fossil fuels. 
 
 - The decision was announced on March 16 2022, as part of the unveiling of France's package in response to the energy crisis sparked by the Russian invasion of Ukraine, and made effective on 15 April 2022 ; the latter is the starting date at which the announced increases are made effective, based on the date at which the application for MPR funding was submitted. All dates referred to in this study will refer to this application submission date.
 
 ### Defining the treated and control groups
 
-- We exclude from our sample insulation works and various other subsidised services (e.g. preliminary technical audits), leaving only discrete improvements (for instance, a solar-powered water boiler, or a heat pump)^[We focus on heat pumps, which provide the largest sample size, setting aside the analysis for pellet heaters.]. We study the response of outcome variables for heat pumps following the increase in their MPR subsidy, with solar-powered water boilers as the control group.
-
--  Throughout our sample, around 2000 heat pumps were installed on average per 30-day period, with a drop-off in the latter two periods covering mid-July to mid-September. This yields a control group with around 800 improvements carried out per month.
+- We exclude from our sample insulation works and various other subsidised services (e.g. preliminary technical audits), leaving only discrete improvements (for instance, a solar-powered water boiler, or a heat pump)^[We focus on heat pumps, which provide the largest sample size, setting aside the analysis for pellet heaters.]. We study the response of outcome variables for heat pumps following the increase in their MPR subsidy, with solar-powered and thermodynamic water boilers making up the control group.
 
 ```{r echo=FALSE}
 
@@ -452,4 +450,7 @@ knitr::include_graphics("graphs_05_02_2026/graph_didrobustness_price_excet.png")
 knitr::include_graphics("graphs_05_02_2026/graph_didrobustness_price_exces.png")
 
 ```
+
+
+## A dip in MPR applications between March and April ?
 
