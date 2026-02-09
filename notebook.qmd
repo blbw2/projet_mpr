@@ -28,7 +28,7 @@ library(gt)
 - We carry out our estimates using the dataset of MPR grant applications produced by the National Agency for Housing (ANAH)\footnote{\textit{MaPrimeRénov' : Instruction Nationale}}.
 
 - This dataset includes all MPR applications starting from the introduction of the programme in 2020, with the exception of larger-scale renovations (*gestes d'ampleur*) for lower-income households and improvements in *copropriétés*^[A venir avec l'ajout de la base CASD correspondante].
-  - Approx. 500,000 observations (2020-2022), across all improvement types and household income levels^[Nombre exact à vérifier.].
+  - Approx. 500,000 observations (2020-2022), across all improvement types and household income levels^[B: Nombre exact à vérifier.].
 
 - Note that the relationship to the application processing system for MPR means that our dataset covers all MPR applications, and all house renovations which benefited from MPR grants ; however, all improvements for which MPR was not sought thus remain outside of the scope of our dataset. In other words, we study only a small subset of all energy efficiency renovations carried out in France.
 
@@ -96,9 +96,6 @@ The outcome variables are thus the **averages**  of the CEE subsidy, price charg
 
 ### Defining the treated and control groups
 
-
-
-
 - We exclude from our sample insulation works and various other subsidised services (e.g. preliminary technical audits), leaving only discrete improvements (for instance, a solar-powered water boiler, or a heat pump)^[We focus on heat pumps, which provide the largest sample size, setting aside the analysis for pellet heaters.]. We study the response of outcome variables for heat pumps following the increase in their MPR subsidy, with solar-powered water boilers as the control group.
 
 -  Throughout our sample, around 2000 heat pumps were installed on average per 30-day period, with a drop-off in the latter two periods covering mid-July to mid-September. This yields a control group with around 800 improvements carried out per month.
@@ -151,7 +148,7 @@ nsize_gt
 We use Callaway and Sant'anna' (2021)'s doubly robust estimation method, as implemented by the R package `did`. As mentionned in the previous section, units are defined at the combination of locality and improvement type. The treated group consists of installations of heat pumps ; the treatment is binary, corresponding to whether the MPR subsidies were increased on April 15 2022, and is thus also non-staggered. We control for the median fiscal reference revenue. The estimated model can be rewritten as a classic TWFE regression :
 
 $$Y_{i,t}=\alpha_i + \lambda_t + \sum_{k = -12; }^{12} \gamma_k*D_{i,t-k} + \beta*X_{i,t}+\varepsilon_{i,t}$$
-With $Y_{i,t}$ the average at the level of $i,$ the ZE and improvement type combination.
+With $Y_{i,t}$ the average at the level of $i,$ the ZE and improvement type combination. Units are weighted according to the share of the national population.
 
 
 ## Results
@@ -184,7 +181,7 @@ did_pcae_tmo_cee<- att_gt(data= mpr_monthly %>%
 
 - The joint test of significance of the pre-intervention coefficients clearly rejects the null hypothesis of no difference in trends between both groups prior to the MPR increase. Arguably, however, this rejection is driven by a difference in trends which appears to be insignificant starting from 3 periods (6 months from t=0) before the shock.
   - Peut-être un lien avec la fin de période CEE ? Le coefficient à t = -2 correspond à la période ~15/10-11/2021 [mais pourquoi la fin de période CEE affecterait de manière différenciée les PAC et les chauffe-eau ?]
-  - The `HonestDID` analysis shows that assuming the deviation in trends from t=-5 to t=-2 persisted over the entire sample, the estimated CEE response cannot be attributed to the MPR increase^[Hypothèse très forte]. 
+  - The `HonestDID` analysis shows that assuming the deviation in trends from t=-5 to t=-2 persisted over the entire sample, the estimated CEE response cannot be attributed to the MPR increase^[B: Hypothèse très forte ?]. 
   
   
 
@@ -362,6 +359,7 @@ knitr::include_graphics("graphs_05_02_2026/graph_did_pcae_reste.png")
 ```
 
 Here we show the estimated effect of the MPR increase on the part of the renovation expenses which must be financed by the household themselves (i.e. : the price, minus MPR and CEE financing).
+
   - Overall, the estimates show the same pre-intervention pattern as in the case of the price variable, i.e. a positive difference in pre-trends starting from October 2021.
   
   
@@ -386,14 +384,14 @@ Target parameters are partially identified by assuming $\delta$ is in a (user-de
 We use 2 of the default ways of specifying $\Delta$ suggested by Rambachan, Roth (2023).
 
 
-**Binding relative magnitudes of $\delta_s$ for consecutive periods** :
+**Binding relative magnitudes of $\delta_s$ for consecutive periods** ("RM") :
 
 $$\Delta^{RM}(\bar M) = \{ \delta : \forall t \geq0, | \delta_{t+1}-\delta_t| \leq \bar M * max_{s <0}|\delta_{s+1}-\delta_s| \}$$
     - "$\bar M$ bounds the maximum post-treatment violation of parallel trends between ***consecutive*** [our emphasis] periods by  times the maximum pre-treatment violation of parallel trends."
-    - Authors highlight its relevance in cases where one wants to test whether post-period estimates might be caused by confounding *shocks*, of magnitude comparable to the highest pre-intervention confounding shock^[Par défaut les fonctions implémentées dans R choisissent la valeur de $|\delta_s|$ la plus élevée dans la période pre-treatment. Rien n'empêche toutefois de choisir les périodes pre- qu'on juge les plus pertinentes.].  
+    - Authors highlight its relevance in cases where one wants to test whether post-period estimates might be caused by confounding *shocks*, of magnitude comparable to the highest pre-intervention confounding shock^[Par défaut les fonctions implémentées dans R choisissent la valeur de $|\delta_s|$ la plus élevée dans la période pre-treatment. Rien n'empêche en théorie de choisir les périodes pre- qu'on juge les plus pertinentes.].  
     
     
-**Binding the smoothness of $\delta_s$** :
+**Binding the smoothness of $\delta_s$** ("SD") :
 
 If the researcher is interested in binding the changes in the differential trends between control and treated groups :
 
