@@ -1,0 +1,125 @@
+---
+title: "Résultats DID"
+format: 
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+    fig-pos: 'h'
+execute: 
+  echo: FALSE
+---
+
+
+```{r, include=FALSE}
+library(tidyverse)
+library(patchwork)
+library(gt)
+
+
+
+```
+
+# Tableaux récapitulatifs
+
+## PAC air/eau
+```{r}
+tribble(~Revenus,~CEE,~Prix, ~CroissanceNgestes,
+        "Très modestes", "-", "+","+",
+        "Modestes", "+*", "-","+*",
+        "Intermédiaires", "+*","-","+*",
+        "Remarques", "Pour TMO : effet signif en % prix ttc","",""
+        ) |> 
+  gt()
+```
+
+## Chaudière à granulés
+
+```{r}
+tribble(~Revenus,~CEE,~Prix, ~CroissanceNgestes,
+        "Très modestes", "+*", "+","+",
+        "Modestes", "-*", "-","+",
+        "Intermédiaires", "-","+","+",
+        "Remarques", "","",""
+        ) |> 
+  gt()
+```
+
+# Graphiques
+
+## PAC
+
+### Distributions pre/post
+
+![](graphs_19_06_2025/cee/tmo/graph_ze_cee_tmo_density_Chaudière à granulés.pdf)
+
+![](graphs_19_06_2025/cee/mo/graph_ze_cee_mo_density_Chaudière à granulés.pdf)
+
+![](graphs_19_06_2025/cee/int/graph_ze_cee_int_density_Chaudière à granulés.pdf)
+
+### CEE
+
+**ZE/mois**
+![](graphs_19_06_2025/results/pcae/graph_did_monthly_pcae_tmo_cee.pdf)
+
+**Commune/mois**
+
+![](graphs_19_06_2025/results/pcae/graph_did_monthlycom_pcae_tmo_cee.pdf)
+
+**ZE/trimestre**
+
+![](graphs_19_06_2025/results/pcae/graph_did_qtr_pcae_tmo_cee.pdf)
+
+**Estimateur DCDH**
+
+![](graphs_19_06_2025/results/pcae/graph_did_monthly_dcdhcsa_pcae_tmo_cee.pdf)
+
+### Prix
+
+**ZE/mois**
+![](graphs_19_06_2025/results/pcae/graph_did_monthly_pcae_tmo_relprice.pdf)
+
+**Commune/mois**
+
+![](graphs_19_06_2025/results/pcae/graph_did_monthlycom_pcae_tmo_relprice.pdf)
+
+**ZE/trimestre**
+
+![](graphs_19_06_2025/results/pcae/graph_did_qtr_pcae_tmo_relprice.pdf)
+
+**Estimateur DCDH**
+
+![](graphs_19_06_2025/results/pcae/graph_did_monthly_dcdhcsa_pcae_tmo_relprice.pdf)
+
+## Chaudière à granulés
+
+**ZE/mois**
+![](graphs_19_06_2025/results/cag/graph_did_monthly_cag_tmo_cee.pdf)
+
+**Commune/mois**
+
+![](graphs_19_06_2025/results/cag/graph_did_monthlycom_cag_tmo_cee.pdf)
+
+**ZE/trimestre**
+
+![](graphs_19_06_2025/results/cag/graph_did_qtr_cag_tmo_cee.pdf)
+
+**Estimateur DCDH**
+
+![](graphs_19_06_2025/results/cag/graph_did_monthly_dcdhcsa_cag_tmo_cee.pdf)
+
+### Prix
+
+**ZE/mois**
+![](graphs_19_06_2025/results/cag/graph_did_monthly_cag_tmo_relprice.pdf)
+
+**Commune/mois**
+
+![](graphs_19_06_2025/results/cag/graph_did_monthlycom_cag_tmo_relprice.pdf)
+
+**ZE/trimestre**
+
+![](graphs_19_06_2025/results/cag/graph_did_qtr_cag_tmo_relprice.pdf)
+
+
+

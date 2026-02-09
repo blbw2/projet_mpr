@@ -1,0 +1,274 @@
+﻿"Fichier Démographique sur les Logements et les Individus (FIDELI) - 2022"
+
+
+
+
+
+fideli_individu22_1
+"Table individus 2022"
+
+"Nom de la variable";Libellé;Modalités
+id_num;"Identifiant d’individu";
+id_foy_n_1;"Identifiant du foyer fiscal de bilocalisation l'année N-1";
+type_fisc_n_1;"Type d'individu fiscal l'année N-1";"01 - Référent fiscal";"02 - Conjoint";"03 à 12 - Personnes à charge
+A à Z, Enfant mineur (issue du Fichier Pote)";"y ou z - Ex-conjoint décédé (poids=0)"
+biloc_final_n_1;"Individu bilocalisé l'année N-1";"1 - Résidence principale de l’individu bilocalisé";"9 - Seconde résidence de l’individu bilocalisé";"0 ou vide - Individu non bilocalisé"
+rev_princ_n_1;"Type de revenu principal l'année N-1";"0 - Inférieur à un revenu annuel de 2500 euros";"1 - Salaire";"3 - Retraite";"4 - Pensions alimentaires";"5 - Bénéfices agricoles";"6 - Bénéfices industriels et commerciaux";"7 - Bénéfices non commerciaux";"2 - Chômage, préretraite"
+csdep_n_1;"Code département de l’adresse fiscale de traitement l'année N-1";"Code officiel géographique - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+cne1_n_1;"Code commune de l’adresse fiscale de traitement l'année N-1";"Code officiel géographique - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+rue1_n_1;"Numéro de rue au cadastre de l’adresse fiscale de traitement : Code RIVOLI l'année N-1";
+noimm1_n_1;"Numéro d'immeuble de l’adresse fiscale de traitement l'année N-1";
+btq1_n_1;"Indice de répétition de l’adresse fiscale de traitement l'année N-1";
+id_log_n_1;"Identifiant du logement l'année N-1";
+nataff_n_1;"Nature de la taxation l'année N-1";"S - Redevable de la taxe d'habitation en taxation simple";"C - Redevable de la taxe d'habitation en taxation conjointe";"R - Rattachement au sens de la de la taxe d'habitation";"I - Non affecté dans un local à l'adresse";" - Pas de mise à jour"
+ltax_n_1;"Type de taxation l'année N-1";"P - Taxation à titre principal et paiement d’une taxe d'habitation";"p - Taxation à titre principal et non paiement d’une taxe d'habitation";"E - Taxation principale sans abattement, avec dégrèvement et paiement d’une taxe d'habitation";"e - Taxation principale sans abattement, avec dégrèvement et non paiement d’une taxe d'habitation";"S - Taxation à titre secondaire et paiement d’une taxe d'habitation";"s - Taxation à titre secondaire et non paiement d’une taxe d'habitation";"Autres - Ces modalités correspondent à celles de la variable ""occ"" lorsque la variable ""ltax"" est vide et que le foyer est rattaché au logement (nataff=R)";" - Pas de taxation du local ou du contribuable"
+natloc_n_1;"Nature du local l'année N-1";"AP - Appartement";"AT - Antenne téléphone";"AU - Autoroute";"BC - Bûcher";"BD - Buanderie";"BX - Box";"CA - Commerce sans boutique";"CB - Local divers";"CD - Chambre de domestique";"CH - Chantier";"CL - Cellier";"CM - Commerce avec boutique";"CV - Cave";"DC - Dépendance communes ou lieux communs";"DE - Dépendance bâtie isolée";"EC - Dépendance commerciale";"GA - Garage";"GC - Grenier ou cave";"GP - Garage ou parking";"GR - Grenier";"JH - Jardin d'hiver";"LC - Local commun";"MA - Maison";"ME - Maison exceptionnelle";"MP - Maison partagée par une limite territoriale";"PA - Elément de pur agrément";"PI - Pièce indépendante";"PK - Parking";"PS - Piscine";"RS - Remise";"SM - Sol de maison";"SR - Serre";"TR - Terrasse";"TT - Toiture-terrasse";"UE - Transformateur électrique";"UG - Appareil à gaz";"UN - Usine nucléaire";"US/U - Etablissement industriel"
+lien_familial_n_1;"Lien familial avec le référent fiscal l'année N-1";"10 - Référent fiscal";"21 - Conjoint légal";"22 - Conjoint de fait";"31 - Enfant (du référent fiscal ou du conjoint)";"32 - Enfant adopté";"40 - Conjoint enfant";"50 - Frère ou soeur";"60 - Parent";"70 - Autre avec homonymie";"80 - Autre sans homonymie"
+type_menf_n_1;"Type de ménage fiscal l'année N-1";"1 - Homme seul";"2 - Femme seule";"3 - Couple sans enfant";"4 - Couple avec enfant";"5 - Famille monoparentale";"6 - Autre";"9 - Code impossible"
+alterne_n_1;"Indicateur de garde alternée l'année N-1";"1 - Est en résidence alternée";"0 - N'est pas en résidence alternée"
+sal_n_1;"Traitements, salaires l'année N-1";
+chom_n_1;"Allocations chômage et préretraites l'année N-1";
+pens_n_1;"Pensions, retraites et rentes perçues l'année N-1";
+alim_n_1;"Pensions alimentaires reçues l'année N-1";
+ben_agri_n_1;"Bénéfices agricoles l'année N-1";
+ben_ind_n_1;"Bénéfices industriels et commerciaux l'année N-1";
+ben_non_com_n_1;"Bénéfices non commerciaux l'année N-1";
+x_n_1;"Coordonnées géographiques x l'année N-1";
+y_n_1;"Coordonnées géographiques y l'année N-1";
+iris_n_1;"Numéro d'Ilots Regroupés pour l'Information Statistique (IRIS) l'année N-1";"Découpage infracommunal - <a href='https://www.insee.fr/fr/information/2017499' target=""_blank""> cliquer ici</a>"
+depcom_n_1;"Code commune en géographie l'année N-1";"Code officiel géographique - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+qpv_n_1;"Nouveau Quartier Prioritaire de la politique de la Ville (QPV) l'année N-1";
+sexe_co;Sexe;"1 - Homme";"2 - Femme";"P - Individus ayant un revenu dans Pote mais non présent dans Fip (la variable sexe n’existe pas dans Pote)";"C - Conjoints dans Fip qui ont les mêmes nom, prénom, date et lieu de naissance que le déclarant";" - Individus uniquement présents dans Pote (pour l’essentiel des enfants)"
+anais_co;"Année de naissance";
+codnais_co;"Code de la commune de naissance";"Code officiel géographique - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+pres_ind;"Présence de l'individu en N et/ou en N-1";"1 - L'individu n'est présent qu'en N-1";"2 - L'individu n'est présent qu'en N";"3 - L'individu est présent en N et en N-1"
+id_foy;"Identifiant du foyer fiscal";
+type_fisc;"Type d'individu fiscal ";"01 - Référent fiscal";"02 - Conjoint";"03 à 12 - Personnes à charge
+A à Z, Enfant mineur (issue du Fichier Pote)";"y ou z - Ex-conjoint décédé (poids=0)"
+id_foy_bi;"Identifiant du foyer fiscal de bilocalisation";
+rev_princ;"Type de revenu principal";"0 - Inférieur à un revenu annuel de 2500 euros";"1 - Salaire";"3 - Retraite";"4 - Pensions alimentaires";"5 - Bénéfices agricoles";"6 - Bénéfices industriels et commerciaux";"7 - Bénéfices non commerciaux";"2 - Chômage, préretraite"
+zoxyzd2;"Dernier évènement matrimonial dans le foyer fiscal";"X ou R - Mariage ou déclaration de Pacs";"Y ou J - Divorce, séparation ou rupture de Pacs";"Z - Veuvage"
+zoxyzd2_n_1;"Dernier évènement matrimonial dans le foyer fiscal l'année N-1";"X ou R - Mariage ou déclaration de Pacs";"Y ou J - Divorce, séparation ou rupture de Pacs";"Z - Veuvage"
+dacoed2;"Date du dernier événement matrimonial";
+dacoed2_n_1;"Date du dernier événement matrimonial l'année N-1";
+situf_deb;"Situation matrimoniale du référant en début d'année";"M - Marié";"C - Célibataire";"D - Divorcé";"V - Veuf";"O - Pacsé";"A - Personne à charge"
+situf_deb_n_1;"Situation matrimoniale du référant en début d'année N-1";"M - Marié";"C - Célibataire";"D - Divorcé";"V - Veuf";"O - Pacsé";"A - Personne à charge"
+csdep;"Code département de l’adresse fiscale de traitement";"Code officiel géographique - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+cne1;"Code commune de l’adresse fiscale de traitement";"Code officiel géographique - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+rue1;"Numéro de rue au cadastre de l’adresse fiscale de traitement : Code RIVOLI";
+noimm1;"Numéro d'immeuble de l’adresse fiscale de traitement";
+btq1;"Indice de répétition de l’adresse fiscale de traitement";
+reg;"Code région";"01 - Guadeloupe";"02 - Martinique";"03 - Guyane";"04 - La Réunion";"06 - Mayotte";"11 - Île-de-France";"21 - Champagne-Ardenne";"22 - Picardie";"23 - Haute-Normandie";"24 - Centre";"25 - Basse-Normandie";"26 - Bourgogne";"31 - Nord-Pas-de-Calais";"41 - Lorraine";"42 - Alsace";"43 - Franche-Comté";"52 - Pays de la Loire";"53 - Bretagne";"54 - Poitou-Charentes";"72 - Aquitaine";"73 - Midi-Pyrénées";"74 - Limousin";"82 - Rhône-Alpes";"83 - Auvergne";"91 - Languedoc-Roussillon";"93 - Provence alpes côte d'Azur";"94 - Corse";"99 - Etranger"
+mob_final;"Mobilité résidentielle";"0 - Pas de mobilité résidentielle";"1 - Mobilité infra-communale";"2 - Mobilité supra-communale"
+id_log;"Identifiant du logement";
+id_log_sec1;"Identifiant de la première résidence secondaire";
+id_log_sec2;"Identifiant de la deuxième résidence secondaire";
+nataff;"Nature de la taxation";"S - Redevable de la taxe d'habitation en taxation simple";"C - Redevable de la taxe d'habitation en taxation conjointe";"R - Rattachement au sens de la de la taxe d'habitation";"I - Non affecté dans un local à l'adresse";" - Pas de mise à jour"
+natloc;"Nature du local";"AP - Appartement";"AT - Antenne téléphone";"AU - Autoroute";"BC - Bûcher";"BD - Buanderie";"BX - Box";"CA - Commerce sans boutique";"CB - Local divers";"CD - Chambre de domestique";"CH - Chantier";"CL - Cellier";"CM - Commerce avec boutique";"CV - Cave";"DC - Dépendance communes ou lieux communs";"DE - Dépendance bâtie isolée";"EC - Dépendance commerciale";"GA - Garage";"GC - Grenier ou cave";"GP - Garage ou parking";"GR - Grenier";"JH - Jardin d'hiver";"LC - Local commun";"MA - Maison";"ME - Maison exceptionnelle";"MP - Maison partagée par une limite territoriale";"PA - Elément de pur agrément";"PI - Pièce indépendante";"PK - Parking";"PS - Piscine";"RS - Remise";"SM - Sol de maison";"SR - Serre";"TR - Terrasse";"TT - Toiture-terrasse";"UE - Transformateur électrique";"UG - Appareil à gaz";"UN - Usine nucléaire";"US/U - Etablissement industriel"
+situf_fin;"Situation matrimoniale du référant en fin d'année";"M - Marié";"C - Célibataire";"D - Divorcé";"V - Veuf";"O - Pacsé";"A - Personne à charge";"T - Personne décédée"
+situf_fin_n_1;"Situation matrimoniale du référant en fin d'année N-1";"M - Marié";"C - Célibataire";"D - Divorcé";"V - Veuf";"O - Pacsé";"A - Personne à charge";"T - Personne décédée"
+alterne;"Indicateur de garde alternée";"1 - Est en résidence alternée";"0 - N'est pas en résidence alternée"
+poids;"Variable de pondération des individus ";
+biloc_final;"Individu bilocalisé";"1 - Résidence principale de l’individu bilocalisé";"9 - Seconde résidence de l’individu bilocalisé";"0 ou vide - Individu non bilocalisé"
+resid_anchang;"L'année du dernier changement de commune";
+situf_anchang;"L'année du dernier événement matrimonial";
+depcom;"Code commune en géographie";"Code officiel géographique - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+andec_co;"Année de décès";
+x;"Coordonnées géographiques x";
+y;"Coordonnées géographiques y";
+iris;"Numéro d'Ilots Regroupés pour l'Information Statistique (IRIS)";"Découpage infracommunal - <a href='https://www.insee.fr/fr/information/2017499' target=""_blank""> cliquer ici</a>"
+qpv;"Nouveau Quartier Prioritaire de la politique de la Ville (QPV)";
+lien_familial;"Lien familial avec le référent fiscal";"10 - Référent fiscal";"21 - Conjoint légal";"22 - Conjoint de fait";"31 - Enfant (du référent fiscal ou du conjoint)";"32 - Enfant adopté";"40 - Conjoint enfant";"50 - Frère ou soeur";"60 - Parent";"70 - Autre avec homonymie";"80 - Autre sans homonymie"
+type_menf;"Type de ménage fiscal";"1 - Homme seul";"2 - Femme seule";"3 - Couple sans enfant";"4 - Couple avec enfant";"5 - Famille monoparentale";"6 - Autre";"9 - Code impossible"
+ltax;"Type de taxation";"P - Taxation à titre principal et paiement d’une Taxe d'habitation";"p - Taxation à titre principal et non paiement d’une Taxe d'habitation";"E - Taxation principale sans abattement, avec dégrèvement et paiement d’une Taxe d'habitation";"e - Taxation principale sans abattement, avec dégrèvement et non paiement d’une Taxe d'habitation";"S - Taxation à titre secondaire et paiement d’une Taxe d'habitation";"s - Taxation à titre secondaire et non paiement d’une Taxe d'habitation";"Autres - Ces modalités correspondent à celles de la variable ""occ"" lorsque la variable ""ltax"" est vide et que le foyer est rattaché au logement (nataff=R)";" - Pas de taxation du local ou du contribuable"
+sal;"Traitements, salaires";
+chom;"Allocations chômage et préretraites";
+pens;"Pensions, retraites et rentes perçues";
+alim;"Pensions alimentaires reçues";
+ben_agri;"Bénéfices agricoles";
+ben_ind;"Bénéfices industriels et commerciaux";
+ben_non_com;"Bénéfices non commerciaux";
+type_fisc_bi;"Type d’individu fiscal de la deuxième localisation";"01 - Référent fiscal";"02 - Conjoint";"03 à 12 - Personnes à charge"
+prec_xy_diffusion;"Indicateur de qualité du point (x, y)";"1 - Parcelle cadastrale";"2 - Voie ou section cadastrale";"3 - Commune"
+prec_iris_diffusion;"Indicateur de précision du géocodage pour les îlots regroupés pour l'information statistique (IRIS)";"1 - Sûre";"2 - Probable";"3 - Indéterminée";"4 - Vide"
+prec_nqpv_diffusion;"Indicateur de précision du géocodage pour les quartiers prioritaires de la ville (QPV)";"1 - Sûre";"2 - Probable";"3 - Indéterminée";"4 - Vide"
+prec_qva_diffusion;"Indicateur de précision du géocodage pour les quartiers de veille active (QVA)";"1 - Sûre";"2 - Probable";"3 - Indéterminée";"4 - Vide"
+
+
+
+fideli_local22_1
+"Table des locaux 2022"
+
+"Nom de la variable";Libellé;Modalités
+id_log;"Identifiant logement";
+id_loc;"Identifiant local";
+dteloc;"Type de local";"1 - Maison";"2 - Appartement";"3 - Dépendances";"4 - Local commercial"
+dloy48a;"Loyer de 48 en valeur de l'année";
+nbniv;"Nombre de niveaux";
+elec;"Présence d'électricité";"N - Absence";"O - Présence"
+gaz;"Présence du gaz";"N - Absence";"O - Présence"
+nbpp;"Nombre de pièces principales";
+nbcuis8;"Nombre de cuisines de moins de 9 m2";
+nbcuis9;"Nombre de cuisines d'au moins 9 m2";
+nbpiec;"Nombre de pièces";
+cne;"Code commune de l’adresse fiscale de traitement";"Code officiel géographique - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+rue;"Numéro de rue au cadastre de l’adresse fiscale de traitement";
+imm;"Numéro d’immeuble de l’adresse fiscale de traitement";
+btq;"Indice de répétition de l’adresse fiscale de traitement";
+occ;"Occupation du local (propriétaire, locataire, vacant...)";" - Code occupation du rattaché";"/ - Libération du local";"B - Locaux meublés à usage d’habitation, faisant l’objet de locations occasionnelles, permanentes ou saisonnières";"D - Local démoli";"G - Occupation à titre gratuit";"L - Occupation par un locataire";"N - Local dépendance non imposable";"P - Occupation par le propriétaire";"T - Local imposé à la taxe professionnelle";"V - Local vacant";"W - Local vide";"X - Occupation par bail rural"
+nivf;"Etage du local";
+natloc;"Code nature du local";"AP - Appartement";"AT - Antenne téléphone";"AU - Autoroute";"BC - Bûcher";"BD - Buanderie";"BX - Box";"CA - Commerce sans boutique";"CB - Local divers";"CD - Chambre de domestique";"CH - Chantier";"CL - Cellier";"CM - Commerce avec boutique";"CV - Cave";"DC - Dépendance communes ou lieux communs";"DE - Dépendance bâtie isolée";"EC - Dépendance commerciale";"GA - Garage";"GC - Grenier ou cave";"GP - Garage ou parking";"GR - Grenier";"JH - Jardin d'hiver";"LC - Local commun";"MA - Maison";"ME - Maison exceptionnelle";"MP - Maison partagée par une limite territoriale";"PA - Elément de pur agrément";"PI - Pièce indépendante";"PK - Parking";"PS - Piscine";"RS - Remise";"SM - Sol de maison";"SR - Serre";"TR - Terrasse";"TT - Toiture-terrasse";"UE - Transformateur électrique";"UG - Appareil à gaz";"UN - Usine nucléaire";"US/U - Etablissement industriel"
+catloc;"Catégorie du local";" - Ces modalités peuvent être suivies d’un ‘M’ pour les dépendances ordinaires ou d’un ‘S’ pour les dépendances d’agrément pour signifier qu’il s’agit d’une catégorie intermédiaire";"1 - Grand luxe";"2 - Luxe";"3 - Très confortable";"4 - Confortable";"5 - Assez confortable";"6 - Ordinaire";"7 - Médiocre";"8 - Très médiocre";"A - Bonne";"B - Passable";"C - Médiocre";"D - Mauvaise"
+refcad;"Références cadastrales";
+nbsam;"Nombre de salles à manger";
+nbch;"Nombre de chambres";
+nbcuis;"Nombre de cuisines";
+nbsdb;"Nombre de salles de bain";
+nbwc;"Nombre de WC";
+nbbaig;"Nombre de baignoires";
+nbdouc;"Nombre de douches";
+surftot;"Surface totale du local";
+loi48;"Logement soumis à la loi de 1948";" - Non soumis à la loi de 48";"2A ou 2B ou 2C - Soumis à la loi de 48 et construction d'assez bonne qualité";"3A ou 3B - Soumis à la loi de 48 et construction ordinaire avec peu de confort";"4 - Soumis à la loi de 48 et construction sans aucun équipement, indécent"
+datachev;"Année d'achèvement du local";
+ascenseur;"Présence d'ascenseur (appartement)";"N - Absence";"O - Présence"
+typpmo;"Type de personne morale";"1 - État";"2 - Région";"3 - Département";"4 - Commune";"5 - Habitation à loyer modéré (HLM)";"6 - Société d'économie mixte (SEM)";"7 - Copropriété";"8 - Associés";"9 - SNCF";"0 - Autres personnes morales";" - Personnes physiques"
+dateacte;"Date acte de propriété correspondant à la dernière mutation du local";
+csdep;"Code département de l’adresse fiscale de traitement";"Code officiel géographique - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+logement;"Indicatrice de logement suivant le filtre Recensement de la Population (RP)";"1 - Logement au sens du RP";"0 - Pas logement au sens du RP"
+eau;"Présence d'eau";"N - Absence";"O - Présence"
+egout;"Présence du tout à l'égout";"N - Absence";"O - Présence"
+chauff;"Présence du chauffage central";"N - Absence";"O - Présence"
+adrenv;"Adresse d'envoi du propriétaire : code commune";"Code officiel géographique - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+reg;"Code région dans la taxe d'habitation";"01 - Guadeloupe";"02 - Martinique";"03 - Guyane";"04 - La Réunion";"06 - Mayotte";"11 - Île-de-France";"24 - Centre-Val de Loire";"27 - Bourgogne-Franche-Comté";"28 - Normandie";"32 - Hauts-de-France";"44 - Grand Est";"52 - Pays de la Loire";"53 - Bretagne";"75 - Nouvelle-Aquitaine";"76 - Occitanie";"84 - Auvergne-Rhône-Alpes";"93 - Provence Alpes Côte d'Azur";"94 - Corse";"99 - Etranger"
+x;"Coordonnées géographiques x";
+y;"Coordonnées géographiques y";
+iris;"Numéro d'Ilots Regroupés pour l'Information Statistique (IRIS)";"Découpage infracommunal - <a href='https://www.insee.fr/fr/information/2017499' target=""_blank""> cliquer ici</a>"
+qpv;"Nouveau Quartier Prioritaire de la politique de la Ville (QPV)";
+depcom_geo_n;"Code commune en géographie";"Code officiel géographique - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+type_res1;"Occupation du local version 1";"0 - Local qui n'est pas considéré comme un logement";"1 - Résidences principales avec des occupants dans le champ Fidéli";"2 - Résidences principales avec des occupants hors champ Fidéli";"3 - Résidences secondaires avec des occupants dans le champ Fidéli";"4 - Résidences secondaires avec des occupants hors champ Fidéli";"5 - Logements occasionnels";"6 - Logements vacants";"7 - Autres logements"
+type_res2;"Occupation du local version 2";"0 - Local qui n'est pas considéré comme un logement";"1 - Résidences principales avec des occupants dans le champ Fidéli";"2 - Résidences principales avec des occupants hors champ Fidéli";"3 - Résidences secondaires avec des occupants dans le champ Fidéli";"4 - Résidences secondaires avec des occupants hors champ Fidéli";"5 - Logements occasionnels";"6 - Logements vacants";"7 - Autres logements"
+dteloc_n_1;"Type de local l'année N-1";"1 - Maison";"2 - Appartement";"3 - Dépendances";"4 - Local commercial"
+dloy48a_n_1;"Loyer de 48 en valeur de l'année N-1";
+nbniv_n_1;"Nombre de niveaux l'année N-1";
+elec_n_1;"Présence d'électricité l'année N-1";"N - Absence";"O - Présence"
+gaz_n_1;"Présence du gaz l'année N-1";"N - Absence";"O - Présence"
+nbpp_n_1;"Nombre de pièces principales l'année N-1";
+nbcuis8_n_1;"Nombre de cuisines de moins de 9 m2 l'année N-1";
+nbcuis9_n_1;"Nombre de cuisines d'au moins 9 m2 l'année N-1";
+nbpiec_n_1;"Nombre de pièces l'année N-1";
+cne_n_1;"Code commune de l’adresse fiscale de traitement l'année N-1";"Code officiel géographique - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+rue_n_1;"Numéro de rue au cadastre de l’adresse fiscale de traitement l'année N-1";
+imm_n_1;"Numéro d’immeuble de l’adresse fiscale de traitement l'année N-1";
+btq_n_1;"Indice de répétition de l’adresse fiscale de traitement l'année N-1";
+occ_n_1;"Occupation du local (propriétaire, locataire, vacant...) l'année N-1";" - Code occupation du rattaché";"/ - Libération du local";"B - Locaux meublés à usage d’habitation, faisant l’objet de locations occasionnelles, permanentes ou saisonnières";"D - Local démoli";"G - Occupation à titre gratuit";"L - Occupation par un locataire";"N - Local dépendance non imposable";"P - Occupation par le propriétaire";"T - Local imposé à la taxe professionnelle";"V - Local vacant";"W - Local vide";"X - Occupation par bail rural"
+nivf_n_1;"Etage du local l'année N-1";
+natloc_n_1;"Code nature du local l'année N-1";"AP - Appartement";"AT - Antenne téléphone";"AU - Autoroute";"BC - Bûcher";"BD - Buanderie";"BX - Box";"CA - Commerce sans boutique";"CB - Local divers";"CD - Chambre de domestique";"CH - Chantier";"CL - Cellier";"CM - Commerce avec boutique";"CV - Cave";"DC - Dépendance communes ou lieux communs";"DE - Dépendance bâtie isolée";"EC - Dépendance commerciale";"GA - Garage";"GC - Grenier ou cave";"GP - Garage ou parking";"GR - Grenier";"JH - Jardin d'hiver";"LC - Local commun";"MA - Maison";"ME - Maison exceptionnelle";"MP - Maison partagée par une limite territoriale";"PA - Elément de pur agrément";"PI - Pièce indépendante";"PK - Parking";"PS - Piscine";"RS - Remise";"SM - Sol de maison";"SR - Serre";"TR - Terrasse";"TT - Toiture-terrasse";"UE - Transformateur électrique";"UG - Appareil à gaz";"UN - Usine nucléaire";"US/U - Etablissement industriel"
+catloc_n_1;"Catégorie du local l'année N-1";" - Ces modalités peuvent être suivies d’un ‘M’ pour les dépendances ordinaires ou d’un ‘S’ pour les dépendances d’agrément pour signifier qu’il s’agit d’une catégorie intermédiaire";"1 - Grand luxe";"2 - Luxe";"3 - Très confortable";"4 - Confortable";"5 - Assez confortable";"6 - Ordinaire";"7 - Médiocre";"8 - Très médiocre";"A - Bonne";"B - Passable";"C - Médiocre";"D - Mauvaise"
+refcad_n_1;"Références cadastrales l'année N-1";
+nbsam_n_1;"Nombre de salles à manger l'année N-1";
+nbch_n_1;"Nombre de chambres l'année N-1";
+nbcuis_n_1;"Nombre de cuisines l'année N-1";
+nbsdb_n_1;"Nombre de salles de bain l'année N-1";
+nbwc_n_1;"Nombre de WC l'année N-1";
+nbbaig_n_1;"Nombre de baignoires l'année N-1";
+nbdouc_n_1;"Nombre de douches l'année N-1";
+surftot_n_1;"Surface totale du local l'année N-1";
+loi48_n_1;"Logement soumis à la loi de 1948 l'année N-1";" - Non soumis à la loi de 48";"2A ou 2B ou 2C - Soumis à la loi de 48 et construction d'assez bonne qualité";"3A ou 3B - Soumis à la loi de 48 et construction ordinaire avec peu de confort";"4 - Soumis à la loi de 48 et construction sans aucun équipement, indécent"
+datachev_n_1;"Année d'achèvement du local l'année N-1";
+ascenseur_n_1;"Présence d'ascenseur (appartement) l'année N-1";"N - Absence";"O - Présence"
+typpmo_n_1;"Type de personne morale l'année N-1";"1 - État";"2 - Région";"3 - Département";"4 - Commune";"5 - Habitation à loyer modéré (HLM)";"6 - Société d'économie mixte (SEM)";"7 - Copropriété";"8 - Associés";"9 - SNCF";"0 - Autres personnes morales";" - Personnes physiques"
+dateacte_n_1;"Date acte de propriété correspondant à la dernière mutation du local l'année N-1";
+csdep_n_1;"Code département de l’adresse fiscale de traitement l'année N-1";"Code officiel géographique - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+logement_n_1;"Indicatrice de logement suivant le filtre Recensement de la Population (RP) l'année N-1";"1 - Logement au sens du RP";"0 - Pas logement au sens du RP"
+eau_n_1;"Présence d'eau l'année N-1";"N - Absence";"O - Présence"
+egout_n_1;"Présence du tout à l'égout l'année N-1";"N - Absence";"O - Présence"
+chauff_n_1;"Présence du chauffage central l'année N-1";"N - Absence";"O - Présence"
+reg_n_1;"Code région dans la taxe d'habitation l'année N-1";"01 - Guadeloupe";"02 - Martinique";"03 - Guyane";"04 - La Réunion";"06 - Mayotte";"11 - Île-de-France";"24 - Centre-Val de Loire";"27 - Bourgogne-Franche-Comté";"28 - Normandie";"32 - Hauts-de-France";"44 - Grand Est";"52 - Pays de la Loire";"53 - Bretagne";"75 - Nouvelle-Aquitaine";"76 - Occitanie";"84 - Auvergne-Rhône-Alpes";"93 - Provence Alpes Côte d'Azur";"94 - Corse";"99 - Etranger"
+depcom_n_1;"Code commune en géographie l'année N-1";"Code officiel géographique - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+type_res1_n_1;"Occupation du local version 1 l'année N-1";"0 - Local qui n'est pas considéré comme un logement";"1 - Résidences principales avec des occupants dans le champ Fidéli";"2 - Résidences principales avec des occupants hors champ Fidéli";"3 - Résidences secondaires avec des occupants dans le champ Fidéli";"4 - Résidences secondaires avec des occupants hors champ Fidéli";"5 - Logements occasionnels";"6 - Logements vacants";"7 - Autres logements"
+type_res2_n_1;"Occupation du local version 2 l'année N-1";"0 - Local qui n'est pas considéré comme un logement";"1 - Résidences principales avec des occupants dans le champ Fidéli";"2 - Résidences principales avec des occupants hors champ Fidéli";"3 - Résidences secondaires avec des occupants dans le champ Fidéli";"4 - Résidences secondaires avec des occupants hors champ Fidéli";"5 - Logements occasionnels";"6 - Logements vacants";"7 - Autres logements"
+date_const;"Année de construction redressée";
+id_copro;"Numéro de copropriété";
+tax;"Taxation du logement";"P - Au moins un foyer est taxé à titre principal";"E - Aucun foyer n’est taxé à titre principal et au moins un foyer est taxé à titre principal sans abattement, avec dégrèvement";"S - Aucun foyer n’est taxé à titre principal que ce soit avec ou sans abattement et au moins un foyer est taxé à titre secondaire"
+datenais;"Année de naissance du propriétaire";
+lgt_soc;"Indicatrice de logement social";"0 - Logement ne faisant pas partie du parc social";"1 - Logement du parc social";"Vide - Le logement n’est pas présent l’année étudiée"
+ind_bati;"Indicatrice d’appartenance au bâti";"0 - Local inconnu dans Majic";"1 - Local connu dans Majic"
+nbimput;"Nombre de variables imputées à l’aide de l’information disponible en N-1";
+x_n_1;"Coordonnées géographiques x l'année N-1";
+y_n_1;"Coordonnées géographiques y l'année N-1";
+iris_n_1;"Numéro d'Ilots Regroupés pour l'Information Statistique (IRIS) l'année N-1";"Découpage infracommunal - <a href='https://www.insee.fr/fr/information/2017499' target=""_blank""> cliquer ici</a>"
+qpv_n_1;"Nouveau Quartier Prioritaire de la politique de la Ville (QPV) l'année N-1";
+pres_loc;"Présence du local en N et N-1";"1 - Le local n'est présent qu'en N-1";"2 - Le local n'est présent qu'en N";"3 - Le local est présent en N et en N-1"
+dvltrt;"Valeur locative d’un local complet (1970)";
+dvlpera;"Valeur locative actualisée";
+dvltpe;"Valeur locative d’une PEV (partie d'évaluation) (1970)";
+prec_xy_diffusion;"Indicateur de qualité du point (x, y)";"1 - Parcelle cadastrale";"2 - Voie ou section cadastrale";"3 - Commune"
+prec_nqpv_diffusion;"Indicateur de précision du géocodage pour les Quartiers Prioritaires de la Ville (QPV)";"1 - Sûre";"2 - Probable";"3 - Indéterminée";"4 - Vide"
+prec_qva_diffusion;"Indicateur de précision du géocodage pour les Quartiers de Veille Active (QVA)";"1 - Sûre";"2 - Probable";"3 - Indéterminée";"4 - Vide"
+prec_iris_diffusion;"Indicateur de précision du géocodage pour les Ilots Regroupés pour l'Information Statistique (IRIS)";"1 - Sûre";"2 - Probable";"3 - Indéterminée";"4 - Vide"
+
+
+
+fideli_revenus_menage22
+"Table des revenus du ménage 2022"
+
+"Nom de la variable";Libellé;Modalités
+id_log;"Identifiant logement";
+id_log_n_1;"Identifiant logement l'année N-1";
+zalvm;"Pensions alimentaires versées";
+zfonm;"Revenus fonciers du foyer";
+zvamm;"Revenus de valeurs mobilières";
+m_aplm;"Montant annuel versé pour la prestation Aide personnalisée au logement (APL)";
+m_alfm;"Montant annuel versé pour la prestation Allocation de Logement Familiale (ALF)";
+m_alsm;"Montant annuel versé pour la prestation Allocation de Logement Sociale (ALS)";
+m_alsetm;"Montant annuel versé pour la prestation ALSET";
+logtm;"Montant annuel versé pour les prestations logement";
+pfamm;"Montant annuel versé pour les prestations familiales";
+minim;"Montant annuel versé pour les minima sociaux";
+revdispm;"Revenu disponible monétaire";
+nivviem;"Niveau de vie";
+i_pauvre60m;"Indicatrice de ménage pauvre à 60%";"1 - Ménage sous le seuil de pauvreté";"0 - Ménage au-dessus du seuil de pauvreté"
+nb_uc;"Nombre d’unités de consommation";
+zalvm_n_1;"Pensions alimentaires versées l'année N-1";
+zfonm_n_1;"Revenus fonciers du foyer l'année N-1";
+zvamm_n_1;"Revenus de valeurs mobilières l'année N-1";
+m_aplm_n_1;"Montant annuel versé pour la prestation Aide personnalisée au logement (APL) l'année N-1";
+m_alfm_n_1;"Montant annuel versé pour la prestation Allocation de Logement Familiale (ALF) l'année N-1";
+m_alsm_n_1;"Montant annuel versé pour la prestation Allocation de Logement Sociale (ALS) l'année N-1";
+m_alsetm_n_1;"Montant annuel versé pour la prestation ALSET l'année N-1";
+logtm_n_1;"Montant annuel versé pour les prestations logement l'année N-1";
+pfamm_n_1;"Montant annuel versé pour les prestations familiales l'année N-1";
+minim_n_1;"Montant annuel versé pour les minima sociaux l'année N-1";
+revdispm_n_1;"Revenu disponible monétaire l'année N-1";
+nivviem_n_1;"Niveau de vie l'année N-1";
+i_pauvre60m_n_1;"Indicatrice de ménage pauvre à 60% l'année N-1";"1 - Ménage sous le seuil de pauvreté";"0 - Ménage au-dessus du seuil de pauvreté"
+nb_uc_n_1;"Nombre d’unités de consommation l'année N-1";
+
+
+
+fideli_adresses_hors_th22
+"Table des adresses absentes de la taxe d'habitation 2022"
+
+"Nom de la variable";Libellé;Modalités
+csdep;"Code département de l’adresse fiscale de traitement";"Code officiel géographique - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+cne1;"Code commune de l’adresse fiscale de traitement";"Code officiel géographique - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+rue1;"Numéro de rue au cadastre de l’adresse fiscale de traitement : Code RIVOLI";
+noimm1;"Numéro immeuble de l’adresse fiscale de traitement";
+btq1;"Indice de répétition dans la Taxe d'habitation";
+adresse_rh;"Présence d'une résidence hôtelière à l'adresse";"1 - Présence d'une résidence hôtelière à l'adresse";" - Non"
+id_scat1;"Identifiant de la communauté";"11 - Maison de retraite, Ehpad";"12 - Structure Adoma";"13 - Autres foyers de travailleurs";"15 - Structures pour personnes nécessitant des soins médicaux";"16 - Structures pour enfants handicapés";"17 - Structures pour adultes handicapés";"18 - Structures d’aide sociale à l’enfance et de protection judiciaire";"19 - Structures pour adultes et familles avec accompagnement social et psychologique";"21 - Communauté religieuse";"31 - Gendarmerie";"32 - Autre établissement militaire";"41 - Cité universitaire";"42 - Autre internat";"51 - Etablissement pénitentiaire";"61 - Etablissement social de court séjour";"71 - Autre catégorie de communauté"
+id_scat2;"Identifiant de la deuxième communauté";"11 - Maison de retraite, Ehpad";"12 - Structure Adoma";"13 - Autres foyers de travailleurs";"15 - Structures pour personnes nécessitant des soins médicaux";"16 - Structures pour enfants handicapés";"17 - Structures pour adultes handicapés";"18 - Structures d’aide sociale à l’enfance et de protection judiciaire";"19 - Structures pour adultes et familles avec accompagnement social et psychologique";"21 - Communauté religieuse";"31 - Gendarmerie";"32 - Autre établissement militaire";"41 - Cité universitaire";"42 - Autre internat";"51 - Etablissement pénitentiaire";"61 - Etablissement social de court séjour";"71 - Autre catégorie de communauté"
+nature;"Nature de l'adresse hors taxe d'habitation, n'étant pas une communauté connue au répertoire des communautés";"APPART - Appartement";"BATEAU - Bateau";"CAMPING - Camping";"DOMICIL - Domiciliation";"HOTEL - Hôtel";"MONACO - Monaco";"AUTRES - Autres"
+carac_adr;"Nature de l'adresse hors taxe d'habitation";"1 - Communauté";"2 - Logement ordinaire";"3 - Camping, Hôtel";"4 - Domiciliation";"9 - Ex-communauté"
+
+
+
+fideli_dependance22
+"Table des dépendances des locaux 2022"
+
+"Nom de la variable";Libellé;Modalités
+id_loc;"Identifiant local";
+cconad;"Nature de dépendance";"BC - Bûcher";"BD - Buanderie";"BX - Box";"CD - Chambre de domestique";"CL - Cellier";"CV - Cave";"DC - Dépendance de local commun";"GA - Garage";"GC - Grenier ou cave";"GP - Garage ou parking";"GR - Grenier";"JH - Jardin d'hiver";"PA - Elément de pur agrément";"PI - Pièce indépendante";"PK - Parking";"PS - Piscine";"RS - Remise";"SR - Serre";"TR - Terrasse";"TT - Toiture-terrasse"
+
+
+

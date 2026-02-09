@@ -1,0 +1,36 @@
+faire DiD sur marges ou VA des installateurs/etc
+-> permet de montrer effet autre que "quality up"
+
+rescale
+
+ESG comme exemple de "PPP" qui serait pas spécifique au contexte (environmental + instru prix + quantité)
+ (ou les annonces types secteur X s'engage à créer Y milliers d'emplois)
+
+d
+
+(virer CAG du groupe contrôle => 
+et garder que CAG en groupe contrôle => effet net)
+
+(et autres robustesses sur la composition contrôle type leave one out)
+-> rédiger partie méthodes/résultats
+
+
+re: G entretien avec EDF
+
+sur SUTVA : si position de PAC dans le merit order change via MPR, il y a potentiellement un effet où par ex on réduit
+
+test de saisonnalité ? mais pas évidente moi
+
+
+
+csdid -> long,2
+
+https://www.statalist.org/forums/forum/general-stata-discussion/general/1734952-csdid-long-gaps
+default : [pre-treatment only] individiual (g,t) DIDs are estimated using short gaps
+--> Y_t - Y_t-1
+"long gaps" = standard ES practice, of estimating DIDs for y_t and y_g-1, where g = min(t) : D_i,t =1
+with our setup, g = g' = 1
+
+vérifier si MPR s'arrête au 31/12/2022 (et prix reste bloqué à 1000+euros)
+
+vérifier l'effet CEE (euros) au M le plus fort.

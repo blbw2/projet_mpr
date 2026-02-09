@@ -1,0 +1,236 @@
+---
+title: "Graphiques descriptifs MPR & CEE"
+format: html
+execute: 
+  echo: FALSE
+---
+
+
+```{r, include=FALSE}
+library(tidyverse)
+library(patchwork)
+library(gt)
+
+
+load("graphs_discontinuites.rda")
+load("tables_list.rda")
+assignmentplot <- graph_rdd_export[[1]]
+primeceeplot <- graph_rdd_export[[2]]
+prixgesteplot <- graph_rdd_export[[3]]
+geste_plot2 <- graph_rdd_export[[5]]
+```
+
+# Tableaux nombre observations
+
+## Par type de geste
+
+```{r}
+tables_list[[1]] |> 
+  gt() |> 
+  opt_interactive()
+```
+
+
+## Par type de geste x catégorie revenus
+```{r}
+tables_list[[2]] |> 
+  gt()|> 
+  opt_interactive()
+
+```
+# Prime MPR
+
+## Pompe à chaleur air/eau
+
+```{r}
+assignmentplot$`graph_mpr_Pompe à chaleur air / eau`+
+  geom_smooth()
+```
+
+## Chaudières à gaz THPE
+
+```{r}
+assignmentplot$`graph_mpr_Chaudière gaz THPE`
+```
+
+## Chauffage solaire
+
+```{r}
+assignmentplot$`graph_mpr_Chauffage solaire combiné`
+```
+
+## Chaudière granulés
+
+```{r}
+assignmentplot$`graph_mpr_Chaudière à granulés`
+```
+
+## Pompe géothermique
+```{r}
+assignmentplot$`graph_mpr_Pompes à chaleur géothermique`
+```
+
+## Chaudière bûches
+
+```{r}
+assignmentplot$`graph_mpr_Chaudière à bûches`
+```
+
+
+# Prime CEE
+
+## Pompe à chaleur air/eau
+
+```{r}
+primeceeplot$`graph_cee_Pompe à chaleur air / eau`+
+  geom_smooth()
+```
+
+## Chaudières à gaz THPE
+
+```{r}
+primeceeplot$`graph_cee_Chaudière gaz THPE`
+```
+
+## Chauffage solaire
+
+```{r}
+primeceeplot$`graph_cee_Chauffage solaire combiné`
+```
+
+## Chaudière granulés
+
+```{r}
+primeceeplot$`graph_cee_Chaudière à granulés`
+```
+
+## Pompe géothermique
+```{r}
+primeceeplot$`graph_cee_Pompes à chaleur géothermique`
+```
+
+## Chaudière bûches
+
+```{r}
+primeceeplot$`graph_cee_Chaudière à bûches`
+```
+
+
+# Prix du geste
+
+## Pompe à chaleur air/eau
+
+```{r}
+prixgesteplot$`graph_mtgeste_Pompe à chaleur air / eau`
+```
+
+## Chaudières à gaz THPE
+
+```{r}
+prixgesteplot$`graph_mtgeste_Chaudière gaz THPE`
+```
+
+## Chauffage solaire
+
+```{r}
+prixgesteplot$`graph_mtgeste_Chauffage solaire combiné`
+```
+
+## Chaudière granulés
+
+```{r}
+prixgesteplot$`graph_mtgeste_Chaudière à granulés`
+```
+
+## Pompe géothermique
+```{r}
+prixgesteplot$`graph_mtgeste_Pompes à chaleur géothermique`
+```
+
+## Chaudière bûches
+
+```{r}
+prixgesteplot$`graph_mtgeste_Chaudière à bûches`
+```
+
+
+# Récap par geste
+
+
+
+## Pompe à chaleur air/eau
+
+```{r}
+primeceeplot$`graph_mpr_Pompe à chaleur air / eau`
+```
+
+## Chaudières à gaz THPE
+
+```{r}
+primeceeplot$`graph_mpr_Chaudière gaz THPE`
+```
+
+## Chauffage solaire
+
+```{r}
+primeceeplot$`graph_mpr_Chauffage solaire combiné`
+```
+
+## Chaudière granulés
+
+```{r}
+primeceeplot$`graph_mpr_Chaudière à granulés`
+```
+
+## Pompe géothermique
+```{r}
+primeceeplot$`graph_mpr_Pompes à chaleur géothermique`
+```
+
+## Chaudière bûches
+
+```{r}
+primeceeplot$`graph_mpr_Chaudière à bûches`
+```
+
+
+# Prix du geste
+
+## Pompe à chaleur air/eau
+
+```{r}
+geste_plot2[[1]]
+```
+
+## Chaudières à gaz THPE
+
+```{r}
+geste_plot2[[2]]
+```
+
+## Chauffage solaire
+
+```{r}
+geste_plot2[[3]]
+```
+
+## Chaudière granulés
+
+```{r}
+geste_plot2[[4]]
+```
+
+## Pompe géothermique
+```{r}
+geste_plot2[[5]]
+```
+
+## Chaudière bûches
+
+```{r}
+geste_plot2[[6]]
+```
+
+
+
+

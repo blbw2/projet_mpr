@@ -1,0 +1,94 @@
+---
+title: "Graphiques descriptifs MPR & CEE"
+format: html
+execute: 
+  echo: FALSE
+---
+
+
+```{r, include=FALSE}
+library(tidyverse)
+library(patchwork)
+library(gt)
+
+
+# load("graphs_discontinuites.rda")
+# load("tables_list.rda")
+# assignmentplot <- graph_rdd_export[[1]]
+# primeceeplot <- graph_rdd_export[[2]]
+# prixgesteplot <- graph_rdd_export[[3]]
+# geste_plot2 <- graph_rdd_export[[5]]
+```
+
+## Gestes/ménages visés (pour l'instant)
+
+- Pompes à chaleur air/eau
+
+- Chaudières à granulés
+
+- Isolation des murs par l'extérieur (placebo)
+
+
+Ménages très modestes uniquement à ce stade.
+
+## Paramètre d'intérêt
+
+On estime l'effet de traitement (= changement des primes MPR) à la discontinuité :
+
+$$\tau^{RDD} = \underset{x \downarrow c}{\mathbb{lim}}\ \mathbb{E}[Y_i|X=x] - \underset{x \uparrow c}{\mathbb{lim}}\ \mathbb{E}[Y_i|X=x]$$
+Avec $x=t$ et $c=0$, où $t$ est le nombre de jours séparant la date de dépôt du dossier du 15 avril 2022.
+
+
+On peut aussi estimer une pente ?
+
+$$\tau^{RDD}= \frac{\underset{x \downarrow c}{\mathbb{lim}}\ \mathbb{E}[Y_i|X=x] - \underset{x \uparrow c}{\mathbb{lim}}\ \mathbb{E}[Y_i|X=x]}{\underset{x \downarrow c}{\mathbb{lim}}\ \mathbb{E}[D_i|X=x] - \underset{x \uparrow c}{\mathbb{lim}}\ \mathbb{E}[D_i|X=x]}$$
+
+Avec $D_i$ le montant de la prime MPR.
+
+**Variables de contrôle** :
+
+  - type de logement (maison, appartement)
+  - log du revenu fiscal de référence
+
+A venir : FEs mois, localisation (dept?), caractéristiques/surface logement (-> nécessite matching).
+
+# Pompes à chaleur
+
+```{r}
+tribble(~type, ~bandwith, ~coeff, ~CI95, ~ P.value,
+        "CEE (niveau)","16.4", "40", "[-85,165]", "0.537",
+        "CEE (niveau)", "60", "-95", "[-507, 316]", "1",
+        "CEE (%)", "17.9", "-0.018", "[-0.032,-0.004]", "0.013",
+        "CEE(%)", "60", "-0.022", "[-0.062, 0.018]", "0.999",
+        "Prix", "22.6", "473", "[-147,1094]", "0.167",
+        "Prix", "60", "349", "[-1628,2327]", "1") |> 
+  gt()
+```
+
+
+# Chaudière à granulés
+
+```{r}
+tribble(~type, ~bandwith, ~coeff, ~CI95, ~ P.value,
+        "CEE (niveau)","23.6", "-106", "[-261,49]", "0.185",
+        "CEE (niveau)", "60", "-48", "[-353, 258]", "0.998",
+        "CEE (%)", "23.1", "-0.019", "[-0.031,-0.007]", "0.001",
+        "CEE(%)", "60", "-0.018", "[-0.042, 0.006]", "0.659",
+        "Prix", "11.3", "1215", "[68, 2362]", "0.037",
+        "Prix", "60", "1402", "[-8261, 11064]", "1") |> 
+  gt()
+```
+
+# Isolation murs extérieurs (placebo)
+
+
+```{r}
+tribble(~type, ~bandwith, ~coeff, ~CI95, ~ P.value,
+        "CEE (niveau)","16.8", "4", "[-377,386]", "0.982",
+        "CEE (niveau)", "60", "--134", "[-1424, 1155]", "1",
+        "CEE (%)", "15.8", "0.005", "[-0.017,0.027]", "0.674",
+        "CEE(%)", "60", "-0.001", "[-0.096, 0.076]", "1",
+        "Prix", "26.5", "87", "[-1109, 1283]", "0.889",
+        "Prix", "60", "151", "[-1890, 2192]", "0.999") |> 
+  gt()
+```

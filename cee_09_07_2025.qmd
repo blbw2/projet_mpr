@@ -1,0 +1,190 @@
+---
+title: "Effects of subsidising housing energy improvements in the presence of a white certificate scheme"
+format: 
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+    fig-pos: 'h'
+execute: 
+  echo: FALSE
+---
+
+
+```{r, include=FALSE}
+library(tidyverse)
+library(patchwork)
+library(gt)
+
+
+
+```
+
+# Introduction
+
+Starting in 2020, France introduced MaPrimeRénov', a scheme that repackaged various subsidies for housing energy efficiency improvements, with the aim of providing more support to lower-income households. Prior to MPR, another policy had been introduced to encourage energy efficiency improvements, in the form of the Certificats d'Economies d'Energie (CEE). This programme defined quantitative targets for energy providers in terms of certificates, which were to be acquired by providing financial assistance to households carrying out improvements. In essence, MPR consists in a publicly-financed subsidy for lower-income households, whereas the CEE, while also resulting in subsidies for households, is paid for by energy consumers via the passing-on to energy prices of costs incurred by energy firms.
+
+Thus, these two policies have co-existed since 2020, both targeting the same kind of energy efficiency imporvements.  This paper aims to investigate the effects of introducing a public subsidy programme in the context where a private-led policy already existed. In particular, it examines whether the introduction of the MPR subsidies has led to desired outcomes (more improvements carried out by lower-income households) ; or whether part of the extra financial support ended up being passed on to other agents - energy providers, in the form of lower financial support needed to help a household afford improvements and thus deliver a CEE, or construction sector firms, which may have captured part of the subsidy by raising prices on renovations.
+
+To identify the effect of the introduction of MPR, we rely on an administrative decision to increase the subsidy amounts for certain types of renovation works, effective for projects submitted starting on 15 April 2022. We estimate the effect of this increase in MPR subsidies with an event-study approach, using categories of energy efficiency improvements which were not concerned by the increase in support as a control group. Preliminary results provide some evidence of substitution, rather than complementarity, of the MPR and CEE programmes, as well an increase in renovation prices, in the case of lower-income households.
+
+# Revue de littérature & motivation
+
+Relevant strands of literature :
+
+- Theory : 
+  - Respective merits of energy tax vs subsidy -> Giraudet et al. (2011, 2021) : tax is more efficient.
+  - **Interaction** of a (de facto) tax on energy consumption + a subsidy of energy efficiency improvements. (~= pricing of neg externality interacting with subsiding neg externality-reducing investments).
+
+- Assessments of CEE & other EEO schemes :
+  - **Leverage vs additionality trade-off : distributors focus on shorter-term, cost-effective (in delivering energy savings) improvements** (Rohde et al. 2014).
+  - In the case of France, instead during Phase I CITE support was more generous for heating than insulation, yet the latter was likely to provide more cost-effective energy savings. **Obligated parties focused more (within the residential segment) on precisely the heating rather than insulation measures, i.e. followed the overlapping subsidy instrument rather than cost-effectiveness per se.**
+    - Authors estimate limited direct leverage.
+  
+  
+
+  
+- Assessments of overall energy efficiency policy mix:
+  - Rosenow et al. (2016) provide a (high-level/broad) synthesis of wide range of energy efficiency policies, studies etc, esp. across the EU. EEOs and grants are considered to fulfill the same function : reduce the price of energy efficiency investments to spur more purchases by households.
+    - I.e. there is already an overlap in function ; substitution is made even more likely by the capped-savings design of EEOs. **Calibrating/negotiating obligations according to the policy context influences the degree of substitutability.**
+
+- Political economy : subsidy as means of overcoming acceptability issues, fairness concerns etc of the CEE model, i.e. "making energy consumers pay for it".
+  - Policy : public + private crowding in as the consensus (at EU level) ?
+
+
+
+
+# Données & traitements
+
+
+- Source : MPR Instruction Nationale
+
+La base MPR du CASD est divisée en plusieurs fichiers :
+
+- Dossier : contient les informations relatives au dossier MPR dans son ensemble : montants totaux des travaux/primes déclarés à divers stades du dossier, quelques caractéristiques individuelles (revenu fiscal de référence, appartement/maison). Un même dossier peut recouper plusieurs gestes/travaux. La variable de datation (date de dépôt du dossier, sur laquelle est jugée le cadre réglementaire à appliquer) vient de ce fichier.
+- Gestes : informations sur les montants des primes & gestes *individuels* à différents stades d'avancement des travaux. Contient également les SIRET et raisons sociales.
+- CEE : informations sur les primes CEE, spécifiques à un geste réalisé (i.e. différent des infos sur les primes CEE dans le fichier dossier, qui peut recouper plusieurs gestes différents).
+
+La variable d'identifiant de dossier permet le join du fichier Dossier aux autres fichiers ; les fichiers Gestes et CEE s'apparient via les variables d'identifiant + type de geste.
+
+S'agissant des montants (primes ou prix ttc), chaque fichier contient plusieurs variables. Par exemple, prime CEE déclarée par le demandeur à l'engagement ; prime CEE à l'engagement ; prime CEE saisie par le demandeur au solde; prime CEE au solde.
+
+  - Dans tous les cas, les variables indiquant les montants au solde sont ceux qui ont été retenus.
+  
+## Traitement des doublons ou dossiers non-aboutis :
+
+- Il arrive qu'il y ait plusieurs observations pour ce qui semble être un même geste. Parfois les valeurs des variables sont identiques, mais il arrive qu'il y ait des différences (c.f. tableau pour un exemple) :
+
+```{r}
+tribble(
+  ~id, ~prixttcinit, ~prixttcsolde, ~ceeinit, ~ceesolde,~type,~siret,
+  "A", 1000,800,350,0,"iso_ext","1",
+  "A", 1000,800,350,0,"iso_ext","1",
+  "A",1000,800,0,500,"iso_ext","1",
+  "A",1000,800,0,500,"iso_ext","1"
+) |> 
+  gt()
+
+```
+
+Dans ces cas-là, pour l'instant on ne retient que la 1re ligne avec la fonction `distinct()` sur les variables d'intérêt (ID, prix & primes au solde, type de geste, siret).
+  
+  - Idéalement on aurait plus d'informations sur comment traiter ces cas.
+  
+Dans certains cas (rares), le fichier dossier indique 1 seul geste réalisé, mais le prix ou la valeur des primes renseignés diffèrent de ceux dans le fichier gestes.
+  
+  - Dans ce cas on prend les valeurs renseignées dans le fichier dossier.
+  
+## Agrégation
+
+Les observations sont agrégées au niveau zone d'emploi x mois x type de travaux x catégorie de revenus de ménages. Les mois sont définis comme périodes de 30 jours à compter du 15 avril 2022 ; t = 0 correspond aux 30 jours à partir du 15/04/2022 (inclus).
+
+  - Sont exclues de l'échantillon les observations pour lequel le prix déclaré est supérieur au quantile 0.999. Le quantile est calculé pour chaque type de travaux x catégorie de revenus, sur la période juillet 2021 - juillet 2022.
+  - Pour les primes CEE on prend les moyennes des primes en euros ou des primes en % du prix TTC.
+  - Pour la variable de prix, on prend le ratio du prix déclaré vs le prix moyen déclaré pour la catégorie de revenus et le type de travaux, sur le second semestre 2021.
+  
+
+L'unité d'analyse est donc le croisement ZE x type de travaux (en mettant de côté les ménages autre que très modestes).
+
+## Définition des groupes traités et de contrôle
+
+2 groupes traités : Pompes à chaleur air/eau, et chaudières à granulés. Ménages "très modestes" uniquement.
+
+2 groupes de contrôle ont été testés :
+
+```{r}
+tribble( ~Final, ~Initial,
+         "Chaudière gaz THPE", "Remplacement fenêtres" ,
+         "Chauffe-eau thermo", "Isolation combles",
+         "Chauffe-eau solaire", "Isolation murs ext",
+         "Cuve à fioul", "Isolation murs int", 
+         "Foyers fermés, inserts", "Isolation toiture-terrase", 
+         "VMC double flux", "", 
+         "Réseaux chaleur/froid","" , 
+         "Partie thermique panneau hybride","" ) |> 
+  gt() |> 
+  tab_header(title = md("Groupes de contrôle"),
+             subtitle = md("Gestes inclus"))
+```
+
+## Graphiques descriptifs
+
+**Nombre de gestes réalisés selon le groupe :**
+
+![](graphs_09_07_2025/Nobs_groups.pdf)
+
+
+
+**Distribution des variables d'outcome avant/après :**
+
+![](graphs_09_07_2025/graph_density_pcae_price_cee.pdf)
+
+# Estimation 
+
+L'effet de MPR est estimé par une *event study*, réalisée avec le package `did` qui implémente l'estimateur doublement robuste de Callaway, Sant'Anna (2021).
+
+Variables de contrôle : 
+
+  - Part des maisons dans les gestes réalisés dans la ZE au mois t.
+  - Revenu fiscal de référence médian parmi les gestes réalisés dans la ZE au mois t.
+
+NB : l'inclusion de ces variables n'a que peu d'effets sur les estimations^[On peut envisager de join avec la base FIDELI sur les coordonnées des bâtiments, pour récupérer des caractéristiques des logements rénovés (surface)].
+
+Variables d'outcome - moyennes par ZE x geste x mois :
+
+  - Prime CEE (euros)
+  - Prix TTC du geste (ratio vs prix moyen S2 2021)
+  - Nombre de gestes ? (à faire via e.g. duration model)
+
+
+# Résultats
+
+Tous les résultats ci-dessous proviennent d'estimations avec pour groupe traité les PAC air/eau et pour groupe de contrôle le groupe "final" (i.e. à gauche dans le tableau présenté plus haut).
+
+
+## CEE
+
+![](graphs_02_07_2025/did_monthly_pcae_tmo_cee_newcontrols.pdf)
+
+## Prix
+
+![](graphs_02_07_2025/did_monthly_pcae_tmo_relprice_newcontrols.pdf)
+
+# References
+
+
+
+
+**Energy saving obligations—cutting the Gordian Knot of leverage? (2014)**
+
+Clemens Rohde, Jan Rosenow, Nick Eyre, Louis-Gaëtan Giraudet
+
+Better leverage of public funding is essential in order to trigger the invest-ment needed for energy efficiency. In times of austerity governments in-creasingly look at policy instruments not funded by public expenditure and Energy Savings Obligations represent one option. Because Energy Savings Obligations are paid for by all energy customers, the degree to which they are able to raise additional private capital for energy efficiency invest-ments is crucial with regard to the financial burden on consumers. In this paper, we systematically assess how successful Energy Savings Obliga-tions were in levering capital from parties other than the obligated entities including private investors and other public bodies. We analyse three countries with substantial experience with Energy Savings Obligations, identify the main design differences and the effect this has on the degree of leverage. We conclude that the design of Energy Savings Obligations largely determines the degree of leverage and that that there appears to be a trade-off between high leverage and additionality.
+
+**Comparing and combining energy saving policies : will proposed residential sector policies meet French official targets?** (2011)
+
+Louis-Gaëtan Giraudet, Céline Guivarch, Philippe Quirion
+
+This paper assesses the impact of French policies for residential space-heating energy consumption,
+both enacted (tax credits for the purchase of energy efficient durables, soft loans for retrofitting
+actions, stringent building codes) and anticipated (carbon tax, retrofitting obligation). It uses a hybrid energy-economy model incorporating specific features of energy conservation, notably the rebound effect and some “barriers” to energy efficiency such as split incentives and imperfect information. Forward-looking simulations show that (i) stand-alone policies improve the energy efficiency of the building stock but, with the exception of carbon tax, generate a rebound effect; (ii) interactions among instruments are roughly additive; (iii) a combination of all policies fails to meet Government conservation targets.

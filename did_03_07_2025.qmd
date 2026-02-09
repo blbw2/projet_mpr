@@ -1,0 +1,55 @@
+---
+title: "Résultats DID"
+format: 
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+    fig-pos: 'h'
+execute: 
+  echo: FALSE
+---
+
+
+```{r, include=FALSE}
+library(tidyverse)
+library(patchwork)
+library(gt)
+
+
+
+```
+
+# PAC Air/eau (nouveau groupe non-traité)
+
+**Disclaimer : ne pas se fier aux intitulés des ggplots en eux-mêmes (j'ai oublié de changer le nom de l'équipement, celui qui apparaît dans les sous-parties de quarto est le bon)**.
+
+## CEE (euros)
+![](graphs_02_07_2025/did_monthly_pcae_tmo_cee_newcontrols.pdf)
+
+![](graphs_02_07_2025/did_monthly_pcae_tmo_cee_oldcontrols.pdf)
+
+## CEE (%)
+
+![](graphs_02_07_2025/did_monthly_pcae_tmo_ceepc_newcontrols.pdf)
+
+![](graphs_02_07_2025/did_monthly_pcae_tmo_ceepc_allcontrols.pdf)
+
+### Estimateur DCDH ###
+
+![](graphs_02_07_2025/did_monthly_pcae_dcdhcsa_tmo_ceepc_newcontrols.pdf)
+
+
+## Prix 
+
+![](graphs_02_07_2025/did_monthly_pcae_tmo_relprice_newcontrols.pdf)
+
+![](graphs_02_07_2025/did_monthly_pcae_tmo_relprice_oldcontrols.pdf)
+
+# Chaudière à granulés
+
+
+![](graphs_02_07_2025/graphdid_monthly_cag_tmo_cee_newcontrol.pdf)
+![](graphs_02_07_2025/graphdid_monthly_cag_tmo_cee_newcontrol.pdf)
+
+

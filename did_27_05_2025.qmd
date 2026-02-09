@@ -1,0 +1,142 @@
+---
+title: "Graphiques descriptifs MPR & CEE"
+format: html
+execute: 
+  echo: FALSE
+---
+
+
+```{r, include=FALSE}
+library(tidyverse)
+library(patchwork)
+library(gt)
+
+
+
+```
+
+# Cadre
+
+## Gestes visés (pour l'instant)
+
+- Pompes à chaleur air/eau
+
+- Chaudières à granulés
+
+## Estimations
+
+2 méthodes: 
+
+- Estimateur double-robust de Callaway, Sant'Anna (2021).
+  
+  - Robuste aux problèmes des régressions TWFE (c.f. litérature).
+  - Inconvénient : assez limitant sur le choix des covariates, le package semble avoir été conçu pour des applications avec des panels standards.
+  
+  
+  
+  
+# Résultats
+
+## Pompe à chaleur
+
+### Ménages très modestes
+
+```{r}
+
+tribble(~mois,~ATT,~CIm, ~CIp,
+        -2, -0.0027, -0.052, 0.047,
+        -1, 0.004, -0.0265, 0.0345,
+        0, 0.006, -0.042, 0.054,
+        1, -0.025, -0.06, 0.01,
+        2, -0.041, -0.073, -0.01,
+        3, -0.04, -0.09, 0.011) |> 
+  ggplot(aes(x=mois, y= ATT))+
+  geom_point()+
+  geom_pointrange(aes(ymin=CIm, ymax=CIp))+
+  theme_bw()+
+  labs(title = "PCAE, ménages très modestes, Prime CEE (%)")
+```
+
+```{r}
+
+tribble(~mois,~ATT,~CIm, ~CIp,
+        -2, 1067, 523, 1609,
+        -1, -1543, -2804, -282,
+        0, 182, -1497, 1861,
+        1, 1763, -898, 4424,
+        2, 1565, -373, 3503,
+        3, 607, -2160, 3375) |> 
+  ggplot(aes(x=mois, y= ATT))+
+  geom_point()+
+  geom_pointrange(aes(ymin=CIm, ymax=CIp))+
+  theme_bw()+
+  labs(title = "PCAE, ménages très modestes, Prix TTC")
+```
+
+```{r}
+
+tribble(~mois,~ATT,~CIm, ~CIp,
+        -2, 0.26, 0.06, 0.46,
+        -1, -0.26, -0.29, -0.024,
+        0, -0.006, -0.223, 0.23,
+        1, -0.021, -0.26, 0.22,
+        2, -0.029, -0.254, -0.195,
+        3, -0.022, -0.26, 0.022) |> 
+  ggplot(aes(x=mois, y= ATT))+
+  geom_point()+
+  geom_pointrange(aes(ymin=CIm, ymax=CIp))+
+  theme_bw()+
+  labs(title = "PCAE, tous ménages, Prime CEE (%)")
+```
+
+```{r}
+
+tribble(~mois,~ATT,~CIm, ~CIp,
+        -2, 1067, 523, 1609,
+        -1, -1543, -2804, -282,
+        0, 182, -1497, 1861,
+        1, 1763, -898, 4424,
+        2, 1565, -373, 3503,
+        3, 607, -2160, 3375) |> 
+  ggplot(aes(x=mois, y= ATT))+
+  geom_point()+
+  geom_pointrange(aes(ymin=CIm, ymax=CIp))+
+  theme_bw()+
+  labs(title = "PCAE, tous ménages , Prix TTC")
+```
+
+## Chaudière à granulés
+
+
+```{r}
+
+tribble(~mois,~ATT,~CIm, ~CIp,
+        -2, 0.005, -0.0213, 0.0304,
+        -1, 0.006, -0.009, 0.02,
+        0, 0.001, -0.032, 0.052,
+        1, -0.002, -0.037, 0.03,
+        2, -0.012, -0.029, -0.0047,
+        3, -0.003, -0.045, 0.039) |> 
+  ggplot(aes(x=mois, y= ATT))+
+  geom_point()+
+  geom_pointrange(aes(ymin=CIm, ymax=CIp))+
+  theme_bw()+
+  labs(title = "CAG, ménages très modestes, Prime CEE (%)")
+```
+
+
+```{r}
+
+tribble(~mois,~ATT,~CIm, ~CIp,
+        -2, 454, 160, 748,
+        -1, -866, -1665, -68,
+        0, 326, -271, 924,
+        1, 1601, -368, 2836,
+        2, 1473, -801, 2144,
+        3, 2517, -1475, 3560) |> 
+  ggplot(aes(x=mois, y= ATT))+
+  geom_point()+
+  geom_pointrange(aes(ymin=CIm, ymax=CIp))+
+  theme_bw()+
+  labs(title = "CAG, ménages très modestes, Prix TTC")
+```

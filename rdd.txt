@@ -1,0 +1,46 @@
+RDD
+-> non-param
+-> autour du 01/01/2022
+-> Vérifier absence d'autres discontinuités à la même date
+(réformes d'autres dispositifs., effet de demande/avant après)
+
+Désaisonnaliser en prenant pour refs les évolutions de prix 
+autour de la m période sur années précédentes.
+
+(La variable de prime MPR n'est pas utilisée en soi...)
+
+Placebo : isolation
+(on reproduit la même RDD)
+!! ajouter FE catégorie de ménages (ou encore mieux faire un RDD pour chaque type de ménage)
++ FE ZE.
+pass-thru à la prime CEE
+pass-thru au prix TTC
+
+On peut aussi examiner l'hétérogénéité entre catégories revenus.
+(ex : si un marché est très compétitif pas de marge pour amortir les chocs ->
+ pass thru + fort)
+ --> interaction sur coefs
+ 
+Vérifier densité en termes de date autour des cutoffs pour bénéficier
+des primes réformées.
+-> Si il y a un trou, on a effet anticipations.
+-> Faire un donut dans ce cas.
+-> Eventuellement voir sur la date _d'annonce_ d'augmentation de MPR.
+
+Check N ~ around intervention date (-> and local regression bandwith)
+checker la nature mono-geste (si match CEE | gestes sur family subtype).
+
+lien bunching -> quantités MPR versées 
+
+pq on aurait effets pass-thru partiels tels que sur plot
+
+nettoyer outliers + graph n_gestes
+granulés
+(reste à charge )
+autres aides mt
+
+
+mpr_t = c+ ind(r0: t> t0)
+y_t = a + b*mpr (is b < 0?)
+y_t = a+ b*(c+ind(r0: t>t0))
+running var = t-t0

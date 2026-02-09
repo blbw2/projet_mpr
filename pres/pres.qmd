@@ -1,0 +1,71 @@
+---
+title: "MPR|CEE"
+author:
+  - name: Benoit Williatte
+    email: benoit.williatte@sciencespo.fr
+    affiliation: OFCE, Sciences Po Paris
+    affiliation-url: http://www.ofce.fr
+institution: "Observatoire Français des Conjonctures Économiques"
+date: today
+lang: fr
+bibliography: pres_references.bib
+toc-depth: 1
+format: 
+  pres-revealjs: default
+  # slide-level niveau des slides à prendre en compte (2 par défaut)
+  # utiliser set_fontsize_reveal(chemin, 32) pour changer la taille des caractères
+---
+
+```{r, include=FALSE}
+ofce::init_qmd()
+library(gt)
+library(tidyverse)
+```
+# Estimations effet CEE
+
+<!-- ## CEE (euros) -->
+<!-- ![](figures/graphs_19_01_2026/) -->
+
+![](figures/graphs_19_01_2026/)
+
+## CEE (logs)
+
+![](figures/graphs_19_01_2026b/1000027057.jpg)
+
+
+## HDID (RM) : y = CEE(euros), sensibilité aux $\beta_{es}^{pre}$
+
+![](figures/graphs_19_01_2026/1000027052.jpg)
+
+## HDID (SDB negative) : y = CEE(euros),
+
+![](figures/graphs_19_01_2026/1000027054.jpg)
+
+## Avec y = log(CEE), pas d'effet significatif (mais pre-trend positive)
+
+![](figures/graphs_19_01_2026b/1000027057.jpg)
+
+##HDID (SDB positive) : y = CEE(logs),
+
+![](figures/graphs_19_01_2026/1000027055.jpg)
+
+
+
+# Estimations effet prix TTC
+
+## Prix (euros)
+![](figures/graphs_19_01_2026c/1000027063.jpg)
+## Prix (logs)
+![](figures/graphs_19_01_2026c/1000027067.jpg)
+
+## 
+
+![](figures/graphs_19_01_2026/1000027057.jpg)
+
+## HDID (RM) : y = log(Prix)
+
+![](figures/graphs_19_01_2026b/1000027058.jpg)
+
+## HDID(SD)
+
+![](figures/graphs_19_01_2026b/1000027059.jpg)

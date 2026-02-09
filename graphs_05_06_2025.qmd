@@ -1,0 +1,115 @@
+---
+title: "Graphiques descriptifs + estimations ES 05/06/2025"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+execute: 
+  echo: FALSE
+---
+
+
+```{r, include=FALSE}
+library(tidyverse)
+library(patchwork)
+library(gt)
+
+
+```
+
+
+# Estimations (agrégation par ZE/type geste)
+
+## Pool de tous types travaux, tous types de ménages
+
+![](graphs_05_06_2025/results/graph_did_monthly_allpooled_cee.pdf)
+
+![](graphs_05_06_2025/results/graph_did_monthly_allpooled_relprice.pdf)
+
+## Tous types travaux, ménages très modestes
+
+![](graphs_05_06_2025/results/graph_did_allpooled_tmo_ceepc.pdf)
+
+![](graphs_05_06_2025/results/graph_did_monthly_allpooled_tmo_relprice.pdf)
+
+## Des résultats assez prévisibles...
+![](graphs_05_06_2025/placebo_ceepc_density.pdf)
+![](graphs_05_06_2025/placebo_ceepc_monthlydensity.pdf)
+
+## PAC air/eau
+
+### Tous types de ménages
+
+![](graphs_05_06_2025/results/graph_did_monthly_pcae_ceepc.pdf)
+
+![](graphs_05_06_2025/results/graph_did_monthly_pcae_relprice.pdf)
+
+
+### Ménages très modestes
+
+![](graphs_05_06_2025/results/graph_did_monthly_pcae_tmo_ceepc.pdf)
+![](graphs_05_06_2025/results/graph_did_monthly_pcae_tmo_relprice.pdf)
+
+
+## Chaudière à granulés 
+
+### Tous types de ménages
+
+![](graphs_05_06_2025/results/graph_did_monthly_cag_ceepc.pdf)
+
+![](graphs_05_06_2025/results/graph_did_monthly_cag_relprice.pdf)
+
+### Ménages très modestes
+
+![](graphs_05_06_2025/results/graph_did_monthly_cag_tmo_ceepc.pdf)
+
+![](graphs_05_06_2025/results/graph_did_monthly_cag_tmo_relprice.pdf)
+
+
+# Graphiques descriptifs : distributions
+
+## CEE (euros)
+
+### Treated
+![](graphs_05_06_2025/cee/ceegraph_ze_cee_density_Pompe à chaleur air_eau.pdf)
+
+![](graphs_05_06_2025/cee/ceegraph_ze_cee_density_Chaudière à granulés.pdf)
+
+![](graphs_05_06_2025/cee/ceegraph_ze_cee_density_Chaudière à bûches.pdf)
+
+![](graphs_05_06_2025/cee/ceegraph_ze_cee_density_Chaudière gaz THPE.pdf)
+
+
+
+### Control
+
+![](graphs_05_06_2025/cee/ceegraph_ze_cee_density_Isolation de la toiture en pente - plafond de combles.pdf)
+![](graphs_05_06_2025/cee/ceegraph_ze_cee_density_Isolation des murs par l’extérieur.pdf)
+
+![](graphs_05_06_2025/cee/ceegraph_ze_cee_density_Isolation des murs par l’intérieur.pdf)
+
+![](graphs_05_06_2025/cee/ceegraph_ze_cee_density_Remplacement des fenêtres ou porte-fenêtres.pdf)
+
+
+## Prix
+
+
+### Treated
+![](graphs_05_06_2025/price_income/pricegraph_ze_rel_price_incomedensity_Pompe à chaleur air_eau.pdf)
+
+![](graphs_05_06_2025/price_income/pricegraph_ze_rel_price_incomedensity_Chaudière à granulés.pdf)
+
+![](graphs_05_06_2025/price_income/pricegraph_ze_rel_price_incomedensity_Chaudière gaz THPE)
+
+
+
+### Control
+
+![](graphs_05_06_2025/price_income/pricegraph_ze_rel_price_incomedensity_Isolation de la toiture en pente - plafond de combles.pdf)
+![](graphs_05_06_2025/price_income/pricegraph_ze_rel_price_incomedensity_Isolation murs extérieur.pdf)
+
+![](graphs_05_06_2025/price_income/pricegraph_ze_rel_price_incomedensity_Isolation des murs par l’intérieur.pdf)
+
+![](graphs_05_06_2025/price_income/pricegraph_ze_rel_price_incomedensity_Remplacement des fenêtres ou porte-fenêtres.pdf)
+

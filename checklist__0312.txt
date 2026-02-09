@@ -1,0 +1,28 @@
+
+paper motivation
+-> crowd out
+->-> qualify re: context of interaction of quantity instrument + price (?) instrument
+
+
+robustness:
+- other income category + other improvement type done
+- outcome variables in % done
+- control variables 
+- HonestDID : pre trends (esp price)
+
+
+other graphs :
+
+
+revamp the pre/post descriptive stat distrib plots  -> done
+
+
+table summary statistics : aggregate control vs treated and put in pre:post
+-> desc stats of variables (outcome ; control) done
+
+Other info :
+
+shares of total improvement (either N, or in % of spending) -> look at internal MPR data + wider market trends if possible
+Pac market 2021-2022
+CEE design (allowance supply, price corridor, coups de pouces/bimodalité des CEE post-MPR).
+-> coup de pouce : min 4000euros pour certaines opérations standardisées (PAC A/E), pour ménages en précarité énergétique
