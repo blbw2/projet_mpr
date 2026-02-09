@@ -28,7 +28,7 @@ library(gt)
 - We carry out our estimates using the dataset of MPR grant applications produced by the National Agency for Housing (ANAH)\footnote{\textit{MaPrimeRénov' : Instruction Nationale}}.
 
 - This dataset includes all MPR applications starting from the introduction of the programme in 2020, with the exception of larger-scale renovations (*gestes d'ampleur*) for lower-income households and improvements in *copropriétés*^[A venir avec l'ajout de la base CASD correspondante].
-  - Approx. 500,000 observations (2020-2022)^[Nombre exact à vérifier.].
+  - Approx. 500,000 observations (2020-2022), across all improvement types and household income levels^[Nombre exact à vérifier.].
 
 - Note that the relationship to the application processing system for MPR means that our dataset covers all MPR applications, and all house renovations which benefited from MPR grants ; however, all improvements for which MPR was not sought thus remain outside of the scope of our dataset. In other words, we study only a small subset of all energy efficiency renovations carried out in France.
 
